@@ -1,0 +1,14 @@
+{
+  "barren_cet6": {
+    "interval": 1,
+    "repetitions": 1,
+    "ef": 2.36,
+    "nextReview": "2026-06-17"
+  },
+  "acute_cet6": {
+    "interval": 1,
+    "repetitions": 0,
+    "ef": 1.96,
+    "nextReview": "2026-06-17"
+  }
+}

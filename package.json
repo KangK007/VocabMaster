@@ -1,0 +1,20 @@
+{
+  "name": "vocab-master",
+  "version": "2.0.0",
+  "description": "高效英语背单词桌面软件 - 采用SM-2间隔重复算法，科学记忆英语词汇",
+  "main": "app.py",
+  "scripts": {
+    "start": "python app.py",
+    "install-deps": "pip install -r requirements.txt",
+    "test": "python -m unittest discover -s tests && node tests/core-utils.test.js && node tests/learning-intelligence.test.js",
+    "check": "python -m py_compile app.py build_wordbanks.py generate_icon.py setup_shortcuts.py run.pyw && node --check src/app.js && node --check src/core-utils.js && node --check src/learning-intelligence.js"
+  },
+  "keywords": [
+    "vocabulary",
+    "english",
+    "spaced-repetition",
+    "education"
+  ],
+  "author": "",
+  "license": "MIT"
+}

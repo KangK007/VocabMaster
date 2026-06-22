@@ -1,0 +1,352 @@
+[
+  {
+    "word": "acquisition",
+    "phonetic": "/ˌækwɪˈzɪʃn/",
+    "meaning": "n. 获得；习得；收购",
+    "example": "Language acquisition is a complex process.",
+    "exampleTranslation": "语言习得是一个复杂的过程。"
+  },
+  {
+    "word": "adolescence",
+    "phonetic": "/ˌædəˈlesns/",
+    "meaning": "n. 青春期；青少年时期",
+    "example": "Adolescence is a period of rapid growth and change.",
+    "exampleTranslation": "青春期是快速成长和变化的时期。"
+  },
+  {
+    "word": "aesthetic",
+    "phonetic": "/esˈθetɪk/",
+    "meaning": "adj. 美学的；审美的",
+    "example": "The building has great aesthetic value.",
+    "exampleTranslation": "这座建筑具有很高的美学价值。"
+  },
+  {
+    "word": "allegation",
+    "phonetic": "/ˌæləˈɡeɪʃn/",
+    "meaning": "n. 指控；断言",
+    "example": "He denied the allegations of fraud.",
+    "exampleTranslation": "他否认了欺诈指控。"
+  },
+  {
+    "word": "ambiguous",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "meaning": "adj. 模棱两可的；含糊的",
+    "example": "The government's position on the issue is ambiguous.",
+    "exampleTranslation": "政府在这个问题上的立场含糊不清。"
+  },
+  {
+    "word": "analogy",
+    "phonetic": "/əˈnælədʒi/",
+    "meaning": "n. 类比；相似",
+    "example": "He drew an analogy between the brain and a computer.",
+    "exampleTranslation": "他把大脑比作计算机。"
+  },
+  {
+    "word": "anthropology",
+    "phonetic": "/ˌænθrəˈpɑːlədʒi/",
+    "meaning": "n. 人类学",
+    "example": "She is studying anthropology at university.",
+    "exampleTranslation": "她在大学学习人类学。"
+  },
+  {
+    "word": "antibiotic",
+    "phonetic": "/ˌæntibaɪˈɑːtɪk/",
+    "meaning": "n. 抗生素",
+    "example": "The doctor prescribed a course of antibiotics.",
+    "exampleTranslation": "医生开了一个疗程的抗生素。"
+  },
+  {
+    "word": "apparatus",
+    "phonetic": "/ˌæpəˈrætəs/",
+    "meaning": "n. 仪器；装置",
+    "example": "The laboratory has state-of-the-art apparatus.",
+    "exampleTranslation": "实验室有最先进的仪器。"
+  },
+  {
+    "word": "appropriate",
+    "phonetic": "/əˈproʊpriət/",
+    "meaning": "adj. 适当的 v. 占用",
+    "example": "Is this an appropriate time to discuss the matter?",
+    "exampleTranslation": "现在是讨论此事的适当时机吗？"
+  },
+  {
+    "word": "approximately",
+    "phonetic": "/əˈprɑːksɪmətli/",
+    "meaning": "adv. 大约；近似地",
+    "example": "Approximately 200 people attended the conference.",
+    "exampleTranslation": "大约200人参加了会议。"
+  },
+  {
+    "word": "archaeology",
+    "phonetic": "/ˌɑːrkiˈɑːlədʒi/",
+    "meaning": "n. 考古学",
+    "example": "Archaeology helps us understand ancient civilizations.",
+    "exampleTranslation": "考古学帮助我们理解古代文明。"
+  },
+  {
+    "word": "articulate",
+    "phonetic": "/ɑːrˈtɪkjuleɪt/",
+    "meaning": "adj. 口才好的 v. 清楚表达",
+    "example": "He is an articulate and persuasive speaker.",
+    "exampleTranslation": "他是一位口才好、有说服力的演讲者。"
+  },
+  {
+    "word": "assessment",
+    "phonetic": "/əˈsesmənt/",
+    "meaning": "n. 评估；评定",
+    "example": "The company conducted an environmental impact assessment.",
+    "exampleTranslation": "公司进行了环境影响评估。"
+  },
+  {
+    "word": "assumption",
+    "phonetic": "/əˈsʌmpʃn/",
+    "meaning": "n. 假设；承担",
+    "example": "Don't make assumptions without evidence.",
+    "exampleTranslation": "没有证据不要做假设。"
+  },
+  {
+    "word": "atmospheric",
+    "phonetic": "/ˌætməsˈferɪk/",
+    "meaning": "adj. 大气的；有气氛的",
+    "example": "Atmospheric pollution is a serious problem.",
+    "exampleTranslation": "大气污染是一个严重问题。"
+  },
+  {
+    "word": "audit",
+    "phonetic": "/ˈɔːdɪt/",
+    "meaning": "n. 审计；审查",
+    "example": "The company faces a financial audit next month.",
+    "exampleTranslation": "公司下个月面临财务审计。"
+  },
+  {
+    "word": "authority",
+    "phonetic": "/əˈθɔːrəti/",
+    "meaning": "n. 权威；当局；权力",
+    "example": "The local authority is responsible for road maintenance.",
+    "exampleTranslation": "地方当局负责道路维护。"
+  },
+  {
+    "word": "autonomous",
+    "phonetic": "/ɔːˈtɑːnəməs/",
+    "meaning": "adj. 自治的；自主的",
+    "example": "The region was granted autonomous status.",
+    "exampleTranslation": "该地区获得了自治地位。"
+  },
+  {
+    "word": "awareness",
+    "phonetic": "/əˈwernəs/",
+    "meaning": "n. 意识；认识",
+    "example": "Public awareness of environmental issues has increased.",
+    "exampleTranslation": "公众对环境问题的意识已经提高。"
+  },
+  {
+    "word": "bankruptcy",
+    "phonetic": "/ˈbæŋkrʌptsi/",
+    "meaning": "n. 破产",
+    "example": "The global crisis led to many business bankruptcies.",
+    "exampleTranslation": "全球危机导致了许多企业破产。"
+  },
+  {
+    "word": "biodiversity",
+    "phonetic": "/ˌbaɪoʊdaɪˈvɜːrsəti/",
+    "meaning": "n. 生物多样性",
+    "example": "Tropical rainforests have incredible biodiversity.",
+    "exampleTranslation": "热带雨林有令人难以置信的生物多样性。"
+  },
+  {
+    "word": "bureaucracy",
+    "phonetic": "/bjʊˈrɑːkrəsi/",
+    "meaning": "n. 官僚主义",
+    "example": "The bureaucracy made it difficult to get permits.",
+    "exampleTranslation": "官僚主义使获得许可证变得困难。"
+  },
+  {
+    "word": "capitalism",
+    "phonetic": "/ˈkæpɪtəlɪzəm/",
+    "meaning": "n. 资本主义",
+    "example": "Capitalism encourages competition and innovation.",
+    "exampleTranslation": "资本主义鼓励竞争和创新。"
+  },
+  {
+    "word": "catastrophe",
+    "phonetic": "/kəˈtæstrəfi/",
+    "meaning": "n. 大灾难；灾祸",
+    "example": "The oil spill was an environmental catastrophe.",
+    "exampleTranslation": "石油泄漏是一场环境灾难。"
+  },
+  {
+    "word": "chronic",
+    "phonetic": "/ˈkrɑːnɪk/",
+    "meaning": "adj. 慢性的；长期的",
+    "example": "He suffers from chronic back pain.",
+    "exampleTranslation": "他患有慢性背痛。"
+  },
+  {
+    "word": "cognitive",
+    "phonetic": "/ˈkɑːɡnətɪv/",
+    "meaning": "adj. 认知的",
+    "example": "Cognitive development is important in early childhood.",
+    "exampleTranslation": "认知发展在幼儿早期很重要。"
+  },
+  {
+    "word": "commodity",
+    "phonetic": "/kəˈmɑːdəti/",
+    "meaning": "n. 商品",
+    "example": "Water is becoming a scarce commodity in many regions.",
+    "exampleTranslation": "水在许多地区正变成稀缺商品。"
+  },
+  {
+    "word": "compensation",
+    "phonetic": "/ˌkɑːmpenˈseɪʃn/",
+    "meaning": "n. 补偿；赔偿",
+    "example": "He received compensation for his injuries.",
+    "exampleTranslation": "他因受伤获得了赔偿。"
+  },
+  {
+    "word": "comprehensive",
+    "phonetic": "/ˌkɑːmprɪˈhensɪv/",
+    "meaning": "adj. 全面的；综合的",
+    "example": "We need a comprehensive plan to solve this problem.",
+    "exampleTranslation": "我们需要一个全面的计划来解决这个问题。"
+  },
+  {
+    "word": "consensus",
+    "phonetic": "/kənˈsensəs/",
+    "meaning": "n. 共识；一致意见",
+    "example": "There is a growing consensus on climate change.",
+    "exampleTranslation": "在气候变化问题上正在形成共识。"
+  },
+  {
+    "word": "conservation",
+    "phonetic": "/ˌkɑːnsərˈveɪʃn/",
+    "meaning": "n. 保护；保存",
+    "example": "Wildlife conservation is crucial for biodiversity.",
+    "exampleTranslation": "野生动物保护对生物多样性至关重要。"
+  },
+  {
+    "word": "controversy",
+    "phonetic": "/ˈkɑːntrəvɜːrsi/",
+    "meaning": "n. 争论；争议",
+    "example": "The new policy has caused considerable controversy.",
+    "exampleTranslation": "新政策引起了相当大的争议。"
+  },
+  {
+    "word": "coordination",
+    "phonetic": "/koʊˌɔːrdɪˈneɪʃn/",
+    "meaning": "n. 协调；配合",
+    "example": "Good coordination between departments is essential.",
+    "exampleTranslation": "部门间的良好协调至关重要。"
+  },
+  {
+    "word": "curriculum",
+    "phonetic": "/kəˈrɪkjələm/",
+    "meaning": "n. 课程",
+    "example": "The school has updated its science curriculum.",
+    "exampleTranslation": "学校更新了科学课程。"
+  },
+  {
+    "word": "demographic",
+    "phonetic": "/ˌdeməˈɡræfɪk/",
+    "meaning": "adj. 人口统计的 n. 人口特征",
+    "example": "Demographic changes affect the job market.",
+    "exampleTranslation": "人口结构变化影响就业市场。"
+  },
+  {
+    "word": "depression",
+    "phonetic": "/dɪˈpreʃn/",
+    "meaning": "n. 沮丧；萧条；洼地",
+    "example": "The country suffered an economic depression.",
+    "exampleTranslation": "该国遭受了经济萧条。"
+  },
+  {
+    "word": "deteriorate",
+    "phonetic": "/dɪˈtɪriəreɪt/",
+    "meaning": "v. 恶化；退化",
+    "example": "Air quality has deteriorated in urban areas.",
+    "exampleTranslation": "城市地区的空气质量已经恶化。"
+  },
+  {
+    "word": "diagnosis",
+    "phonetic": "/ˌdaɪəɡˈnoʊsɪs/",
+    "meaning": "n. 诊断",
+    "example": "Early diagnosis improves treatment outcomes.",
+    "exampleTranslation": "早期诊断改善治疗效果。"
+  },
+  {
+    "word": "dimension",
+    "phonetic": "/daɪˈmenʃn/",
+    "meaning": "n. 维度；方面；尺寸",
+    "example": "We need to consider the social dimension of development.",
+    "exampleTranslation": "我们需要考虑发展的社会维度。"
+  },
+  {
+    "word": "discretion",
+    "phonetic": "/dɪˈskreʃn/",
+    "meaning": "n. 谨慎；自由裁量权",
+    "example": "You can use your own discretion in this matter.",
+    "exampleTranslation": "在这件事上你可以自行决定。"
+  },
+  {
+    "word": "discrimination",
+    "phonetic": "/dɪˌskrɪmɪˈneɪʃn/",
+    "meaning": "n. 歧视；辨别",
+    "example": "Laws prohibit discrimination based on gender.",
+    "exampleTranslation": "法律禁止基于性别的歧视。"
+  },
+  {
+    "word": "diversity",
+    "phonetic": "/daɪˈvɜːrsəti/",
+    "meaning": "n. 多样性",
+    "example": "Cultural diversity enriches our society.",
+    "exampleTranslation": "文化多样性丰富我们的社会。"
+  },
+  {
+    "word": "dynamics",
+    "phonetic": "/daɪˈnæmɪks/",
+    "meaning": "n. 动力学；动态",
+    "example": "The dynamics of the global economy are changing.",
+    "exampleTranslation": "全球经济的动态正在改变。"
+  },
+  {
+    "word": "ecosystem",
+    "phonetic": "/ˈiːkoʊsɪstəm/",
+    "meaning": "n. 生态系统",
+    "example": "Coral reefs are fragile ecosystems.",
+    "exampleTranslation": "珊瑚礁是脆弱的生态系统。"
+  },
+  {
+    "word": "empirical",
+    "phonetic": "/ɪmˈpɪrɪkl/",
+    "meaning": "adj. 经验主义的；实证的",
+    "example": "The theory is supported by empirical evidence.",
+    "exampleTranslation": "这个理论有实证证据支持。"
+  },
+  {
+    "word": "entrepreneur",
+    "phonetic": "/ˌɑːntrəprəˈnɜːr/",
+    "meaning": "n. 企业家",
+    "example": "She is a successful entrepreneur in the tech industry.",
+    "exampleTranslation": "她是科技行业成功的企业家。"
+  },
+  {
+    "word": "epidemic",
+    "phonetic": "/ˌepɪˈdemɪk/",
+    "meaning": "n. 流行病 adj. 流行性的",
+    "example": "Obesity has become a global epidemic.",
+    "exampleTranslation": "肥胖已成为全球流行病。"
+  },
+  {
+    "word": "equilibrium",
+    "phonetic": "/ˌiːkwɪˈlɪbriəm/",
+    "meaning": "n. 平衡；均衡",
+    "example": "The economy is striving to reach equilibrium.",
+    "exampleTranslation": "经济正努力达到均衡。"
+  },
+  {
+    "word": "erosion",
+    "phonetic": "/ɪˈroʊʒn/",
+    "meaning": "n. 侵蚀；腐蚀",
+    "example": "Soil erosion is a major environmental threat.",
+    "exampleTranslation": "土壤侵蚀是主要的环境威胁。"
+  }
+]

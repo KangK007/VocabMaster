@@ -1,0 +1,709 @@
+[
+  {
+    "word": "abandon",
+    "phonetic": "/əˈbændən/",
+    "meaning": "v. 放弃；抛弃",
+    "example": "The crew abandoned the sinking ship.",
+    "exampleTranslation": "船员们放弃了正在下沉的船。"
+  },
+  {
+    "word": "ability",
+    "phonetic": "/əˈbɪləti/",
+    "meaning": "n. 能力；才能",
+    "example": "She has the ability to learn languages quickly.",
+    "exampleTranslation": "她有快速学习语言的能力。"
+  },
+  {
+    "word": "abroad",
+    "phonetic": "/əˈbrɔːd/",
+    "meaning": "adv. 到国外；在国外",
+    "example": "He dreams of studying abroad next year.",
+    "exampleTranslation": "他梦想明年出国留学。"
+  },
+  {
+    "word": "absence",
+    "phonetic": "/ˈæbsəns/",
+    "meaning": "n. 缺席；不在；缺乏",
+    "example": "His absence from the meeting was noted.",
+    "exampleTranslation": "他缺席会议被注意到了。"
+  },
+  {
+    "word": "absolute",
+    "phonetic": "/ˈæbsəluːt/",
+    "meaning": "adj. 绝对的；完全的",
+    "example": "She told me the absolute truth.",
+    "exampleTranslation": "她告诉了我绝对的真相。"
+  },
+  {
+    "word": "absorb",
+    "phonetic": "/əbˈzɔːrb/",
+    "meaning": "v. 吸收；吸引",
+    "example": "Plants absorb water from the soil.",
+    "exampleTranslation": "植物从土壤中吸收水分。"
+  },
+  {
+    "word": "abstract",
+    "phonetic": "/ˈæbstrækt/",
+    "meaning": "adj. 抽象的 n. 摘要",
+    "example": "The concept is too abstract to understand easily.",
+    "exampleTranslation": "这个概念太抽象，不容易理解。"
+  },
+  {
+    "word": "abundant",
+    "phonetic": "/əˈbʌndənt/",
+    "meaning": "adj. 丰富的；充裕的",
+    "example": "The region has abundant natural resources.",
+    "exampleTranslation": "该地区拥有丰富的自然资源。"
+  },
+  {
+    "word": "academic",
+    "phonetic": "/ˌækəˈdemɪk/",
+    "meaning": "adj. 学术的；学院的",
+    "example": "His academic performance is excellent.",
+    "exampleTranslation": "他的学业成绩非常优秀。"
+  },
+  {
+    "word": "accelerate",
+    "phonetic": "/əkˈseləreɪt/",
+    "meaning": "v. 加速；促进",
+    "example": "The car accelerated smoothly onto the highway.",
+    "exampleTranslation": "汽车平稳加速驶入高速公路。"
+  },
+  {
+    "word": "accept",
+    "phonetic": "/əkˈsept/",
+    "meaning": "v. 接受；承认",
+    "example": "She accepted the job offer immediately.",
+    "exampleTranslation": "她立即接受了这份工作。"
+  },
+  {
+    "word": "access",
+    "phonetic": "/ˈækses/",
+    "meaning": "n. 通道；进入；访问 v. 访问",
+    "example": "Students have access to the online library.",
+    "exampleTranslation": "学生可以访问在线图书馆。"
+  },
+  {
+    "word": "accident",
+    "phonetic": "/ˈæksɪdənt/",
+    "meaning": "n. 事故；意外",
+    "example": "There was a car accident on the highway.",
+    "exampleTranslation": "高速公路上发生了一起车祸。"
+  },
+  {
+    "word": "accompany",
+    "phonetic": "/əˈkʌmpəni/",
+    "meaning": "v. 陪伴；伴随",
+    "example": "She accompanied her friend to the hospital.",
+    "exampleTranslation": "她陪朋友去了医院。"
+  },
+  {
+    "word": "accomplish",
+    "phonetic": "/əˈkɑːmplɪʃ/",
+    "meaning": "v. 完成；实现",
+    "example": "We accomplished our goal ahead of schedule.",
+    "exampleTranslation": "我们提前完成了目标。"
+  },
+  {
+    "word": "account",
+    "phonetic": "/əˈkaʊnt/",
+    "meaning": "n. 账户；账目；说明",
+    "example": "I need to open a bank account.",
+    "exampleTranslation": "我需要开一个银行账户。"
+  },
+  {
+    "word": "accurate",
+    "phonetic": "/ˈækjərət/",
+    "meaning": "adj. 准确的；精确的",
+    "example": "The weather forecast proved accurate.",
+    "exampleTranslation": "天气预报证明是准确的。"
+  },
+  {
+    "word": "achieve",
+    "phonetic": "/əˈtʃiːv/",
+    "meaning": "v. 达到；取得；实现",
+    "example": "She achieved her dream of becoming a doctor.",
+    "exampleTranslation": "她实现了成为医生的梦想。"
+  },
+  {
+    "word": "acknowledge",
+    "phonetic": "/əkˈnɑːlɪdʒ/",
+    "meaning": "v. 承认；确认收到",
+    "example": "He acknowledged his mistake publicly.",
+    "exampleTranslation": "他公开承认了自己的错误。"
+  },
+  {
+    "word": "acquire",
+    "phonetic": "/əˈkwaɪər/",
+    "meaning": "v. 获得；习得",
+    "example": "It takes years to acquire fluency in a language.",
+    "exampleTranslation": "熟练掌握一门语言需要数年时间。"
+  },
+  {
+    "word": "adapt",
+    "phonetic": "/əˈdæpt/",
+    "meaning": "v. 适应；改编",
+    "example": "She adapted quickly to the new environment.",
+    "exampleTranslation": "她很快适应了新环境。"
+  },
+  {
+    "word": "adequate",
+    "phonetic": "/ˈædɪkwət/",
+    "meaning": "adj. 足够的；适当的",
+    "example": "We need adequate preparation for the exam.",
+    "exampleTranslation": "我们需要充足的考试准备。"
+  },
+  {
+    "word": "adjust",
+    "phonetic": "/əˈdʒʌst/",
+    "meaning": "v. 调整；适应",
+    "example": "You can adjust the volume with this button.",
+    "exampleTranslation": "你可以用这个按钮调节音量。"
+  },
+  {
+    "word": "administration",
+    "phonetic": "/ədˌmɪnɪˈstreɪʃn/",
+    "meaning": "n. 管理；行政",
+    "example": "The university administration approved the new policy.",
+    "exampleTranslation": "大学行政部门批准了新政策。"
+  },
+  {
+    "word": "admire",
+    "phonetic": "/ədˈmaɪər/",
+    "meaning": "v. 钦佩；赞赏",
+    "example": "I admire her courage and determination.",
+    "exampleTranslation": "我钦佩她的勇气和决心。"
+  },
+  {
+    "word": "admit",
+    "phonetic": "/ədˈmɪt/",
+    "meaning": "v. 承认；准许进入",
+    "example": "He admitted that he was wrong.",
+    "exampleTranslation": "他承认自己错了。"
+  },
+  {
+    "word": "adopt",
+    "phonetic": "/əˈdɑːpt/",
+    "meaning": "v. 采用；收养",
+    "example": "The company adopted a new marketing strategy.",
+    "exampleTranslation": "公司采用了新的营销策略。"
+  },
+  {
+    "word": "advance",
+    "phonetic": "/ədˈvæns/",
+    "meaning": "v. 前进；进步 n. 进展",
+    "example": "Technology continues to advance rapidly.",
+    "exampleTranslation": "技术继续快速发展。"
+  },
+  {
+    "word": "advantage",
+    "phonetic": "/ədˈvæntɪdʒ/",
+    "meaning": "n. 优势；有利条件",
+    "example": "Being bilingual is a great advantage in business.",
+    "exampleTranslation": "双语能力在商业中是巨大的优势。"
+  },
+  {
+    "word": "advertise",
+    "phonetic": "/ˈædvərtaɪz/",
+    "meaning": "v. 做广告；宣传",
+    "example": "The company advertises its products on social media.",
+    "exampleTranslation": "公司在社交媒体上宣传其产品。"
+  },
+  {
+    "word": "background",
+    "phonetic": "/ˈbækɡraʊnd/",
+    "meaning": "n. 背景；出身",
+    "example": "She has a strong background in computer science.",
+    "exampleTranslation": "她有扎实的计算机科学背景。"
+  },
+  {
+    "word": "balance",
+    "phonetic": "/ˈbæləns/",
+    "meaning": "n. 平衡 v. 使平衡",
+    "example": "It's important to maintain a work-life balance.",
+    "exampleTranslation": "保持工作与生活的平衡很重要。"
+  },
+  {
+    "word": "bargain",
+    "phonetic": "/ˈbɑːrɡən/",
+    "meaning": "n. 便宜货；交易 v. 讨价还价",
+    "example": "I got this jacket at a bargain price.",
+    "exampleTranslation": "我以很便宜的价格买到了这件夹克。"
+  },
+  {
+    "word": "barrier",
+    "phonetic": "/ˈbæriər/",
+    "meaning": "n. 障碍；屏障",
+    "example": "Language barriers can make communication difficult.",
+    "exampleTranslation": "语言障碍会使沟通变得困难。"
+  },
+  {
+    "word": "behavior",
+    "phonetic": "/bɪˈheɪvjər/",
+    "meaning": "n. 行为；举止",
+    "example": "The teacher praised the student's good behavior.",
+    "exampleTranslation": "老师表扬了学生的良好行为。"
+  },
+  {
+    "word": "belong",
+    "phonetic": "/bɪˈlɔːŋ/",
+    "meaning": "v. 属于；应在某处",
+    "example": "This book belongs to the library.",
+    "exampleTranslation": "这本书是图书馆的。"
+  },
+  {
+    "word": "benefit",
+    "phonetic": "/ˈbenɪfɪt/",
+    "meaning": "n. 利益；好处 v. 受益",
+    "example": "Exercise has many health benefits.",
+    "exampleTranslation": "锻炼对健康有很多好处。"
+  },
+  {
+    "word": "bitter",
+    "phonetic": "/ˈbɪtər/",
+    "meaning": "adj. 苦的；痛苦的",
+    "example": "The medicine has a bitter taste.",
+    "exampleTranslation": "这药有苦味。"
+  },
+  {
+    "word": "blame",
+    "phonetic": "/bleɪm/",
+    "meaning": "v. 责备 n. 责任",
+    "example": "Don't blame others for your own mistakes.",
+    "exampleTranslation": "不要为自己的错误责备他人。"
+  },
+  {
+    "word": "border",
+    "phonetic": "/ˈbɔːrdər/",
+    "meaning": "n. 边界；边境 v. 接壤",
+    "example": "They crossed the border into the neighboring country.",
+    "exampleTranslation": "他们越过边境进入邻国。"
+  },
+  {
+    "word": "bother",
+    "phonetic": "/ˈbɑːðər/",
+    "meaning": "v. 打扰；烦恼",
+    "example": "Don't bother me while I'm studying.",
+    "exampleTranslation": "我学习时别打扰我。"
+  },
+  {
+    "word": "boundary",
+    "phonetic": "/ˈbaʊndri/",
+    "meaning": "n. 边界；界限",
+    "example": "The river forms a natural boundary between the two countries.",
+    "exampleTranslation": "这条河流构成了两国之间的天然边界。"
+  },
+  {
+    "word": "brand",
+    "phonetic": "/brænd/",
+    "meaning": "n. 品牌；商标",
+    "example": "Nike is a famous global brand.",
+    "exampleTranslation": "耐克是全球知名品牌。"
+  },
+  {
+    "word": "broadcast",
+    "phonetic": "/ˈbrɔːdkæst/",
+    "meaning": "v. 广播；传播 n. 广播节目",
+    "example": "The news will be broadcast at 7 PM.",
+    "exampleTranslation": "新闻将在晚上7点播出。"
+  },
+  {
+    "word": "budget",
+    "phonetic": "/ˈbʌdʒɪt/",
+    "meaning": "n. 预算 v. 做预算",
+    "example": "We need to stick to our monthly budget.",
+    "exampleTranslation": "我们需要遵守每月预算。"
+  },
+  {
+    "word": "calculate",
+    "phonetic": "/ˈkælkjuleɪt/",
+    "meaning": "v. 计算；估计",
+    "example": "Can you calculate the total cost?",
+    "exampleTranslation": "你能计算总费用吗？"
+  },
+  {
+    "word": "campaign",
+    "phonetic": "/kæmˈpeɪn/",
+    "meaning": "n. 运动；战役；竞选活动",
+    "example": "The advertising campaign was very successful.",
+    "exampleTranslation": "这次广告宣传活动非常成功。"
+  },
+  {
+    "word": "candidate",
+    "phonetic": "/ˈkændɪdət/",
+    "meaning": "n. 候选人；应试者",
+    "example": "She is the ideal candidate for this position.",
+    "exampleTranslation": "她是这个职位的理想人选。"
+  },
+  {
+    "word": "capable",
+    "phonetic": "/ˈkeɪpəbl/",
+    "meaning": "adj. 有能力的",
+    "example": "She is capable of handling complex problems.",
+    "exampleTranslation": "她有能力处理复杂问题。"
+  },
+  {
+    "word": "capacity",
+    "phonetic": "/kəˈpæsəti/",
+    "meaning": "n. 容量；能力",
+    "example": "The stadium has a seating capacity of 50000.",
+    "exampleTranslation": "这个体育场可容纳50000人。"
+  },
+  {
+    "word": "capture",
+    "phonetic": "/ˈkæptʃər/",
+    "meaning": "v. 捕获；俘获；拍摄",
+    "example": "The photographer captured a beautiful sunset.",
+    "exampleTranslation": "摄影师拍摄了美丽的日落。"
+  },
+  {
+    "word": "career",
+    "phonetic": "/kəˈrɪr/",
+    "meaning": "n. 职业；生涯",
+    "example": "She chose teaching as her lifelong career.",
+    "exampleTranslation": "她选择教书作为终身职业。"
+  },
+  {
+    "word": "celebrate",
+    "phonetic": "/ˈselɪbreɪt/",
+    "meaning": "v. 庆祝；赞美",
+    "example": "We celebrated his birthday with a party.",
+    "exampleTranslation": "我们开派对庆祝他的生日。"
+  },
+  {
+    "word": "challenge",
+    "phonetic": "/ˈtʃælɪndʒ/",
+    "meaning": "n. 挑战 v. 向…挑战",
+    "example": "Learning a new language is an exciting challenge.",
+    "exampleTranslation": "学习一门新语言是令人兴奋的挑战。"
+  },
+  {
+    "word": "characteristic",
+    "phonetic": "/ˌkærəktəˈrɪstɪk/",
+    "meaning": "n. 特征 adj. 典型的",
+    "example": "Patience is a key characteristic of a good teacher.",
+    "exampleTranslation": "耐心是好老师的关键特征。"
+  },
+  {
+    "word": "circumstance",
+    "phonetic": "/ˈsɜːrkəmstæns/",
+    "meaning": "n. 环境；情况",
+    "example": "Under no circumstances should you give up.",
+    "exampleTranslation": "在任何情况下你都不应该放弃。"
+  },
+  {
+    "word": "civilization",
+    "phonetic": "/ˌsɪvələˈzeɪʃn/",
+    "meaning": "n. 文明；文化",
+    "example": "Ancient Egypt had a remarkable civilization.",
+    "exampleTranslation": "古埃及有着非凡的文明。"
+  },
+  {
+    "word": "climate",
+    "phonetic": "/ˈklaɪmət/",
+    "meaning": "n. 气候；风气",
+    "example": "Climate change is a global concern.",
+    "exampleTranslation": "气候变化是全球关注的问题。"
+  },
+  {
+    "word": "collapse",
+    "phonetic": "/kəˈlæps/",
+    "meaning": "v. 倒塌；崩溃 n. 崩溃",
+    "example": "The old building collapsed during the earthquake.",
+    "exampleTranslation": "那座旧楼在地震中倒塌了。"
+  },
+  {
+    "word": "combination",
+    "phonetic": "/ˌkɑːmbɪˈneɪʃn/",
+    "meaning": "n. 结合；组合",
+    "example": "Success requires a combination of hard work and talent.",
+    "exampleTranslation": "成功需要努力和才能的结合。"
+  },
+  {
+    "word": "comfortable",
+    "phonetic": "/ˈkʌmftəbl/",
+    "meaning": "adj. 舒适的",
+    "example": "This chair is very comfortable to sit in.",
+    "exampleTranslation": "这把椅子坐着很舒服。"
+  },
+  {
+    "word": "command",
+    "phonetic": "/kəˈmænd/",
+    "meaning": "n. 命令；指挥 v. 命令",
+    "example": "He has a good command of English.",
+    "exampleTranslation": "他精通英语。"
+  },
+  {
+    "word": "comment",
+    "phonetic": "/ˈkɑːment/",
+    "meaning": "n. 评论 v. 发表意见",
+    "example": "Do you have any comments on the proposal?",
+    "exampleTranslation": "你对这个提案有什么意见吗？"
+  },
+  {
+    "word": "commercial",
+    "phonetic": "/kəˈmɜːrʃl/",
+    "meaning": "adj. 商业的 n. 商业广告",
+    "example": "The commercial district is always crowded.",
+    "exampleTranslation": "商业区总是很拥挤。"
+  },
+  {
+    "word": "commitment",
+    "phonetic": "/kəˈmɪtmənt/",
+    "meaning": "n. 承诺；投入",
+    "example": "Marriage requires commitment from both partners.",
+    "exampleTranslation": "婚姻需要双方的承诺。"
+  },
+  {
+    "word": "communicate",
+    "phonetic": "/kəˈmjuːnɪkeɪt/",
+    "meaning": "v. 交流；沟通",
+    "example": "We communicate with each other via email.",
+    "exampleTranslation": "我们通过电子邮件交流。"
+  },
+  {
+    "word": "community",
+    "phonetic": "/kəˈmjuːnəti/",
+    "meaning": "n. 社区；团体",
+    "example": "The local community supported the charity event.",
+    "exampleTranslation": "当地社区支持了这次慈善活动。"
+  },
+  {
+    "word": "companion",
+    "phonetic": "/kəmˈpæniən/",
+    "meaning": "n. 同伴；伙伴",
+    "example": "A dog can be a loyal companion.",
+    "exampleTranslation": "狗可以是忠实的伙伴。"
+  },
+  {
+    "word": "compare",
+    "phonetic": "/kəmˈper/",
+    "meaning": "v. 比较；对比",
+    "example": "Let's compare the prices before making a decision.",
+    "exampleTranslation": "我们比较一下价格再做决定。"
+  },
+  {
+    "word": "compete",
+    "phonetic": "/kəmˈpiːt/",
+    "meaning": "v. 竞争；比赛",
+    "example": "Athletes from 50 countries will compete in the games.",
+    "exampleTranslation": "来自50个国家的运动员将参加比赛。"
+  },
+  {
+    "word": "complain",
+    "phonetic": "/kəmˈpleɪn/",
+    "meaning": "v. 抱怨；投诉",
+    "example": "He complained about the poor service at the restaurant.",
+    "exampleTranslation": "他投诉了餐厅糟糕的服务。"
+  },
+  {
+    "word": "complex",
+    "phonetic": "/kəmˈpleks/",
+    "meaning": "adj. 复杂的 n. 综合体",
+    "example": "The problem is more complex than it seems.",
+    "exampleTranslation": "这个问题比看起来更复杂。"
+  },
+  {
+    "word": "concentrate",
+    "phonetic": "/ˈkɑːnsntreɪt/",
+    "meaning": "v. 集中；专注",
+    "example": "I need to concentrate on my studies.",
+    "exampleTranslation": "我需要专注于我的学习。"
+  },
+  {
+    "word": "concept",
+    "phonetic": "/ˈkɑːnsept/",
+    "meaning": "n. 概念；观念",
+    "example": "The concept of time varies across cultures.",
+    "exampleTranslation": "时间的概念因文化而异。"
+  },
+  {
+    "word": "concern",
+    "phonetic": "/kənˈsɜːrn/",
+    "meaning": "n. 关心；忧虑 v. 涉及",
+    "example": "Environmental protection is everyone's concern.",
+    "exampleTranslation": "环境保护关系到每个人。"
+  },
+  {
+    "word": "condition",
+    "phonetic": "/kənˈdɪʃn/",
+    "meaning": "n. 条件；状况",
+    "example": "The house is in excellent condition.",
+    "exampleTranslation": "这栋房子状况极佳。"
+  },
+  {
+    "word": "conduct",
+    "phonetic": "/kənˈdʌkt/",
+    "meaning": "v. 进行；指挥；行为",
+    "example": "The researchers conducted a series of experiments.",
+    "exampleTranslation": "研究人员进行了一系列实验。"
+  },
+  {
+    "word": "conference",
+    "phonetic": "/ˈkɑːnfərəns/",
+    "meaning": "n. 会议；讨论会",
+    "example": "She attended an international conference on AI.",
+    "exampleTranslation": "她参加了一个关于人工智能的国际会议。"
+  },
+  {
+    "word": "confidence",
+    "phonetic": "/ˈkɑːnfɪdəns/",
+    "meaning": "n. 信心；信任",
+    "example": "Practice will help build your confidence.",
+    "exampleTranslation": "练习有助于建立你的信心。"
+  },
+  {
+    "word": "confirm",
+    "phonetic": "/kənˈfɜːrm/",
+    "meaning": "v. 确认；证实",
+    "example": "Please confirm your attendance by Friday.",
+    "exampleTranslation": "请在周五前确认你是否出席。"
+  },
+  {
+    "word": "conflict",
+    "phonetic": "/ˈkɑːnflɪkt/",
+    "meaning": "n. 冲突；矛盾 v. 冲突",
+    "example": "The two reports seem to conflict with each other.",
+    "exampleTranslation": "这两份报告似乎互相矛盾。"
+  },
+  {
+    "word": "connect",
+    "phonetic": "/kəˈnekt/",
+    "meaning": "v. 连接；联系",
+    "example": "The bridge connects the two sides of the river.",
+    "exampleTranslation": "这座桥连接河的两岸。"
+  },
+  {
+    "word": "conscious",
+    "phonetic": "/ˈkɑːnʃəs/",
+    "meaning": "adj. 有意识的；清醒的",
+    "example": "She is very conscious of her health.",
+    "exampleTranslation": "她非常注意自己的健康。"
+  },
+  {
+    "word": "consequence",
+    "phonetic": "/ˈkɑːnsɪkwens/",
+    "meaning": "n. 结果；后果",
+    "example": "Think about the consequences before you act.",
+    "exampleTranslation": "行动之前先考虑后果。"
+  },
+  {
+    "word": "conservative",
+    "phonetic": "/kənˈsɜːrvətɪv/",
+    "meaning": "adj. 保守的",
+    "example": "His conservative approach to investment is safe.",
+    "exampleTranslation": "他保守的投资方式很安全。"
+  },
+  {
+    "word": "considerable",
+    "phonetic": "/kənˈsɪdərəbl/",
+    "meaning": "adj. 相当大的；可观的",
+    "example": "A considerable amount of money was spent.",
+    "exampleTranslation": "花了一大笔钱。"
+  },
+  {
+    "word": "consist",
+    "phonetic": "/kənˈsɪst/",
+    "meaning": "v. 由…组成；在于",
+    "example": "The team consists of twelve members.",
+    "exampleTranslation": "这个团队由十二名成员组成。"
+  },
+  {
+    "word": "constant",
+    "phonetic": "/ˈkɑːnstənt/",
+    "meaning": "adj. 不断的；恒定的",
+    "example": "The constant noise kept me awake all night.",
+    "exampleTranslation": "不断的噪音让我彻夜未眠。"
+  },
+  {
+    "word": "construct",
+    "phonetic": "/kənˈstrʌkt/",
+    "meaning": "v. 建造；构建",
+    "example": "They plan to construct a new hospital here.",
+    "exampleTranslation": "他们计划在这里建一座新医院。"
+  },
+  {
+    "word": "consume",
+    "phonetic": "/kənˈsuːm/",
+    "meaning": "v. 消耗；消费",
+    "example": "We consume a lot of energy every day.",
+    "exampleTranslation": "我们每天消耗大量能源。"
+  },
+  {
+    "word": "contact",
+    "phonetic": "/ˈkɑːntækt/",
+    "meaning": "n. 接触；联系 v. 联系",
+    "example": "Please contact me if you have any questions.",
+    "exampleTranslation": "如有任何问题请联系我。"
+  },
+  {
+    "word": "contemporary",
+    "phonetic": "/kənˈtempəreri/",
+    "meaning": "adj. 当代的；同时代的",
+    "example": "She studies contemporary Chinese literature.",
+    "exampleTranslation": "她研究中国当代文学。"
+  },
+  {
+    "word": "contribute",
+    "phonetic": "/kənˈtrɪbjuːt/",
+    "meaning": "v. 贡献；捐助；投稿",
+    "example": "Everyone should contribute to protecting the environment.",
+    "exampleTranslation": "每个人都应该为保护环境做贡献。"
+  },
+  {
+    "word": "convenient",
+    "phonetic": "/kənˈviːniənt/",
+    "meaning": "adj. 方便的",
+    "example": "The subway is very convenient for commuting.",
+    "exampleTranslation": "地铁通勤非常方便。"
+  },
+  {
+    "word": "convince",
+    "phonetic": "/kənˈvɪns/",
+    "meaning": "v. 说服；使确信",
+    "example": "She convinced me to join the club.",
+    "exampleTranslation": "她说服我加入了俱乐部。"
+  },
+  {
+    "word": "cooperate",
+    "phonetic": "/koʊˈɑːpəreɪt/",
+    "meaning": "v. 合作；协作",
+    "example": "The two companies decided to cooperate on the project.",
+    "exampleTranslation": "两家公司决定在这个项目上合作。"
+  },
+  {
+    "word": "correspond",
+    "phonetic": "/ˌkɔːrəˈspɑːnd/",
+    "meaning": "v. 符合；对应；通信",
+    "example": "His actions don't correspond with his words.",
+    "exampleTranslation": "他的言行不一致。"
+  },
+  {
+    "word": "creative",
+    "phonetic": "/kriˈeɪtɪv/",
+    "meaning": "adj. 创造性的",
+    "example": "Children are naturally creative and imaginative.",
+    "exampleTranslation": "孩子们天生富有创造力和想象力。"
+  },
+  {
+    "word": "critical",
+    "phonetic": "/ˈkrɪtɪkl/",
+    "meaning": "adj. 批评的；关键性的",
+    "example": "This is a critical moment in the negotiation.",
+    "exampleTranslation": "这是谈判中的关键时刻。"
+  },
+  {
+    "word": "curiosity",
+    "phonetic": "/ˌkjʊriˈɑːsəti/",
+    "meaning": "n. 好奇心",
+    "example": "Curiosity drives scientific discovery.",
+    "exampleTranslation": "好奇心推动科学发现。"
+  },
+  {
+    "word": "current",
+    "phonetic": "/ˈkɜːrənt/",
+    "meaning": "adj. 当前的 n. 水流；电流",
+    "example": "The current situation requires immediate action.",
+    "exampleTranslation": "当前形势需要立即行动。"
+  }
+]

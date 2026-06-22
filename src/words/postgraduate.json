@@ -1,0 +1,352 @@
+[
+  {
+    "word": "abide",
+    "phonetic": "/əˈbaɪd/",
+    "meaning": "v. 遵守；忍受；持续",
+    "example": "We must abide by the rules of the competition.",
+    "exampleTranslation": "我们必须遵守比赛规则。"
+  },
+  {
+    "word": "abound",
+    "phonetic": "/əˈbaʊnd/",
+    "meaning": "v. 充满；丰富",
+    "example": "Wildlife abounds in this national park.",
+    "exampleTranslation": "这个国家公园里野生动物很多。"
+  },
+  {
+    "word": "abreast",
+    "phonetic": "/əˈbrest/",
+    "meaning": "adv. 并肩地；并排地",
+    "example": "Keep abreast of the latest developments in science.",
+    "exampleTranslation": "跟上科学的最新发展。"
+  },
+  {
+    "word": "abstain",
+    "phonetic": "/əbˈsteɪn/",
+    "meaning": "v. 弃权；戒除",
+    "example": "He decided to abstain from drinking alcohol.",
+    "exampleTranslation": "他决定戒酒。"
+  },
+  {
+    "word": "acclaim",
+    "phonetic": "/əˈkleɪm/",
+    "meaning": "v. 称赞；欢呼 n. 称赞",
+    "example": "The novel was acclaimed as a masterpiece.",
+    "exampleTranslation": "这部小说被誉为杰作。"
+  },
+  {
+    "word": "accomplice",
+    "phonetic": "/əˈkɑːmplɪs/",
+    "meaning": "n. 共犯；帮凶",
+    "example": "The police arrested his accomplice as well.",
+    "exampleTranslation": "警方也逮捕了他的同伙。"
+  },
+  {
+    "word": "accrue",
+    "phonetic": "/əˈkruː/",
+    "meaning": "v. 累积；增加",
+    "example": "Interest will accrue on the savings account.",
+    "exampleTranslation": "储蓄账户将产生利息。"
+  },
+  {
+    "word": "adept",
+    "phonetic": "/əˈdept/",
+    "meaning": "adj. 熟练的；擅长的",
+    "example": "She is adept at handling difficult customers.",
+    "exampleTranslation": "她善于处理难缠的客户。"
+  },
+  {
+    "word": "advent",
+    "phonetic": "/ˈædvent/",
+    "meaning": "n. 到来；出现",
+    "example": "The advent of the internet changed everything.",
+    "exampleTranslation": "互联网的出现改变了一切。"
+  },
+  {
+    "word": "adversary",
+    "phonetic": "/ˈædvərseri/",
+    "meaning": "n. 对手；敌手",
+    "example": "He faced a formidable adversary in the debate.",
+    "exampleTranslation": "他在辩论中面对一个强大的对手。"
+  },
+  {
+    "word": "affluent",
+    "phonetic": "/ˈæfluənt/",
+    "meaning": "adj. 富裕的；丰富的",
+    "example": "She grew up in an affluent family.",
+    "exampleTranslation": "她在一个富裕家庭长大。"
+  },
+  {
+    "word": "aftermath",
+    "phonetic": "/ˈæftərmæθ/",
+    "meaning": "n. 后果；余波",
+    "example": "In the aftermath of the earthquake, many were homeless.",
+    "exampleTranslation": "地震后，许多人无家可归。"
+  },
+  {
+    "word": "agitate",
+    "phonetic": "/ˈædʒɪteɪt/",
+    "meaning": "v. 煽动；使焦虑；搅动",
+    "example": "The union agitated for better working conditions.",
+    "exampleTranslation": "工会为更好的工作条件而鼓动。"
+  },
+  {
+    "word": "aloft",
+    "phonetic": "/əˈlɔːft/",
+    "meaning": "adv. 在高处；在空中",
+    "example": "The flag was flying aloft in the wind.",
+    "exampleTranslation": "旗帜在高空迎风飘扬。"
+  },
+  {
+    "word": "amass",
+    "phonetic": "/əˈmæs/",
+    "meaning": "v. 积聚；收集",
+    "example": "He amassed a great fortune through real estate.",
+    "exampleTranslation": "他通过房地产积累了巨额财富。"
+  },
+  {
+    "word": "amiable",
+    "phonetic": "/ˈeɪmiəbl/",
+    "meaning": "adj. 和蔼可亲的",
+    "example": "Our neighbor is an amiable old gentleman.",
+    "exampleTranslation": "我们的邻居是一位和蔼可亲的老绅士。"
+  },
+  {
+    "word": "anguish",
+    "phonetic": "/ˈæŋɡwɪʃ/",
+    "meaning": "n. 极度痛苦；苦恼",
+    "example": "The mother waited in anguish for news of her child.",
+    "exampleTranslation": "母亲痛苦地等待着孩子的消息。"
+  },
+  {
+    "word": "annex",
+    "phonetic": "/əˈneks/",
+    "meaning": "v. 吞并；附加 n. 附件",
+    "example": "The territory was annexed by the neighboring country.",
+    "exampleTranslation": "这片领土被邻国吞并了。"
+  },
+  {
+    "word": "antagonism",
+    "phonetic": "/ænˈtæɡənɪzəm/",
+    "meaning": "n. 对抗；敌对",
+    "example": "There is a long history of antagonism between the two groups.",
+    "exampleTranslation": "这两个群体之间有长期的敌对历史。"
+  },
+  {
+    "word": "appalling",
+    "phonetic": "/əˈpɔːlɪŋ/",
+    "meaning": "adj. 令人震惊的；可怕的",
+    "example": "The living conditions in the slums are appalling.",
+    "exampleTranslation": "贫民窟的生活条件令人震惊。"
+  },
+  {
+    "word": "appraise",
+    "phonetic": "/əˈpreɪz/",
+    "meaning": "v. 评估；评价",
+    "example": "The expert appraised the painting at $1 million.",
+    "exampleTranslation": "专家评估这幅画价值100万美元。"
+  },
+  {
+    "word": "ardent",
+    "phonetic": "/ˈɑːrdnt/",
+    "meaning": "adj. 热心的；热烈的",
+    "example": "She is an ardent supporter of environmental protection.",
+    "exampleTranslation": "她是环境保护的热心支持者。"
+  },
+  {
+    "word": "arrogant",
+    "phonetic": "/ˈærəɡənt/",
+    "meaning": "adj. 傲慢的；自大的",
+    "example": "His arrogant attitude made him unpopular.",
+    "exampleTranslation": "他的傲慢态度使他不受欢迎。"
+  },
+  {
+    "word": "articulate",
+    "phonetic": "/ɑːrˈtɪkjuleɪt/",
+    "meaning": "v. 清楚表达 adj. 口才好的",
+    "example": "She is highly articulate and persuasive.",
+    "exampleTranslation": "她口才极好且很有说服力。"
+  },
+  {
+    "word": "aspire",
+    "phonetic": "/əˈspaɪər/",
+    "meaning": "v. 渴望；立志",
+    "example": "He aspires to become a renowned scientist.",
+    "exampleTranslation": "他立志成为一位著名的科学家。"
+  },
+  {
+    "word": "assassinate",
+    "phonetic": "/əˈsæsɪneɪt/",
+    "meaning": "v. 暗杀；行刺",
+    "example": "The president was assassinated in 1963.",
+    "exampleTranslation": "总统于1963年被暗杀。"
+  },
+  {
+    "word": "audit",
+    "phonetic": "/ˈɔːdɪt/",
+    "meaning": "n. 审计；审查 v. 审计",
+    "example": "The company undergoes an annual financial audit.",
+    "exampleTranslation": "公司每年进行财务审计。"
+  },
+  {
+    "word": "augment",
+    "phonetic": "/ɔːɡˈment/",
+    "meaning": "v. 增加；增大",
+    "example": "She took a part-time job to augment her income.",
+    "exampleTranslation": "她做了一份兼职来增加收入。"
+  },
+  {
+    "word": "austerity",
+    "phonetic": "/ɔːˈsterəti/",
+    "meaning": "n. 紧缩；朴素；严厉",
+    "example": "The government imposed austerity measures to reduce debt.",
+    "exampleTranslation": "政府实施紧缩措施以减少债务。"
+  },
+  {
+    "word": "aviation",
+    "phonetic": "/ˌeɪviˈeɪʃn/",
+    "meaning": "n. 航空；飞行",
+    "example": "The aviation industry has grown rapidly.",
+    "exampleTranslation": "航空业发展迅速。"
+  },
+  {
+    "word": "backdrop",
+    "phonetic": "/ˈbækdrɑːp/",
+    "meaning": "n. 背景",
+    "example": "The negotiations took place against a backdrop of violence.",
+    "exampleTranslation": "谈判在暴力背景下进行。"
+  },
+  {
+    "word": "ballot",
+    "phonetic": "/ˈbælət/",
+    "meaning": "n. 投票；选票",
+    "example": "The results of the ballot will be announced tomorrow.",
+    "exampleTranslation": "投票结果将于明天公布。"
+  },
+  {
+    "word": "bankruptcy",
+    "phonetic": "/ˈbæŋkrʌptsi/",
+    "meaning": "n. 破产",
+    "example": "The company filed for bankruptcy last month.",
+    "exampleTranslation": "该公司上个月申请破产。"
+  },
+  {
+    "word": "beacon",
+    "phonetic": "/ˈbiːkən/",
+    "meaning": "n. 灯塔；指路明灯",
+    "example": "The lighthouse served as a beacon for ships.",
+    "exampleTranslation": "灯塔充当了船舶的指路明灯。"
+  },
+  {
+    "word": "benign",
+    "phonetic": "/bɪˈnaɪn/",
+    "meaning": "adj. 良性的；和善的",
+    "example": "The tumor turned out to be benign.",
+    "exampleTranslation": "肿瘤结果是良性的。"
+  },
+  {
+    "word": "besiege",
+    "phonetic": "/bɪˈsiːdʒ/",
+    "meaning": "v. 围攻；困扰",
+    "example": "The celebrity was besieged by reporters.",
+    "exampleTranslation": "这位名人被记者团团围住。"
+  },
+  {
+    "word": "bilateral",
+    "phonetic": "/ˌbaɪˈlætərəl/",
+    "meaning": "adj. 双边的；两侧的",
+    "example": "The two countries signed a bilateral trade agreement.",
+    "exampleTranslation": "两国签署了双边贸易协定。"
+  },
+  {
+    "word": "bipartisan",
+    "phonetic": "/ˌbaɪˈpɑːrtɪzn/",
+    "meaning": "adj. 两党的",
+    "example": "The bill received bipartisan support in Congress.",
+    "exampleTranslation": "该法案在国会获得了两党的支持。"
+  },
+  {
+    "word": "bleak",
+    "phonetic": "/bliːk/",
+    "meaning": "adj. 荒凉的；黯淡的",
+    "example": "The future looks bleak for the coal industry.",
+    "exampleTranslation": "煤炭行业的前景黯淡。"
+  },
+  {
+    "word": "blunder",
+    "phonetic": "/ˈblʌndər/",
+    "meaning": "n. 大错 v. 犯大错",
+    "example": "The politician made a serious diplomatic blunder.",
+    "exampleTranslation": "这位政治家犯了一个严重的外交错误。"
+  },
+  {
+    "word": "bolster",
+    "phonetic": "/ˈboʊlstər/",
+    "meaning": "v. 支持；加强",
+    "example": "The evidence bolstered his case.",
+    "exampleTranslation": "证据支持了他的论点。"
+  },
+  {
+    "word": "breach",
+    "phonetic": "/briːtʃ/",
+    "meaning": "n. 违反；破裂 v. 突破",
+    "example": "This is a breach of contract.",
+    "exampleTranslation": "这是违约行为。"
+  },
+  {
+    "word": "bureaucracy",
+    "phonetic": "/bjʊˈrɑːkrəsi/",
+    "meaning": "n. 官僚主义；官僚机构",
+    "example": "Excessive bureaucracy slows down decision-making.",
+    "exampleTranslation": "过度的官僚主义拖慢了决策。"
+  },
+  {
+    "word": "calamity",
+    "phonetic": "/kəˈlæməti/",
+    "meaning": "n. 灾难；灾祸",
+    "example": "The flood was a terrible calamity for the region.",
+    "exampleTranslation": "洪水对该地区是一场可怕的灾难。"
+  },
+  {
+    "word": "census",
+    "phonetic": "/ˈsensəs/",
+    "meaning": "n. 人口普查",
+    "example": "The national census is conducted every ten years.",
+    "exampleTranslation": "全国人口普查每十年进行一次。"
+  },
+  {
+    "word": "coalition",
+    "phonetic": "/ˌkoʊəˈlɪʃn/",
+    "meaning": "n. 联盟；联合",
+    "example": "A coalition of parties formed the new government.",
+    "exampleTranslation": "政党联盟组成了新政府。"
+  },
+  {
+    "word": "coercive",
+    "phonetic": "/koʊˈɜːrsɪv/",
+    "meaning": "adj. 强制的；胁迫的",
+    "example": "The government denied using coercive measures.",
+    "exampleTranslation": "政府否认使用强制措施。"
+  },
+  {
+    "word": "coincide",
+    "phonetic": "/ˌkoʊɪnˈsaɪd/",
+    "meaning": "v. 同时发生；相符",
+    "example": "His views coincide with mine on this issue.",
+    "exampleTranslation": "在这个问题上他的观点与我的相符。"
+  },
+  {
+    "word": "commission",
+    "phonetic": "/kəˈmɪʃn/",
+    "meaning": "v. 委任 n. 委员会；佣金",
+    "example": "The report was commissioned by the government.",
+    "exampleTranslation": "这份报告是政府委托编制的。"
+  },
+  {
+    "word": "commodity",
+    "phonetic": "/kəˈmɑːdəti/",
+    "meaning": "n. 商品；日用品",
+    "example": "Oil is one of the world's most valuable commodities.",
+    "exampleTranslation": "石油是世界上最有价值的商品之一。"
+  }
+]

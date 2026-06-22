@@ -1,0 +1,352 @@
+[
+  {
+    "word": "abnormal",
+    "phonetic": "/æbˈnɔːrml/",
+    "meaning": "adj. 不正常的；反常的",
+    "example": "The test results showed abnormal levels of protein.",
+    "exampleTranslation": "测试结果显示蛋白质水平异常。"
+  },
+  {
+    "word": "abolish",
+    "phonetic": "/əˈbɑːlɪʃ/",
+    "meaning": "v. 废除；取消",
+    "example": "Many people want to abolish the death penalty.",
+    "exampleTranslation": "许多人想要废除死刑。"
+  },
+  {
+    "word": "abortion",
+    "phonetic": "/əˈbɔːrʃn/",
+    "meaning": "n. 流产；堕胎；失败",
+    "example": "The debate on abortion continues to divide society.",
+    "exampleTranslation": "关于堕胎的辩论继续分裂社会。"
+  },
+  {
+    "word": "absurd",
+    "phonetic": "/əbˈsɜːrd/",
+    "meaning": "adj. 荒谬的；可笑的",
+    "example": "It's absurd to blame the weather for your failure.",
+    "exampleTranslation": "把你的失败归咎于天气是荒谬的。"
+  },
+  {
+    "word": "abuse",
+    "phonetic": "/əˈbjuːs/",
+    "meaning": "n. 滥用；虐待 v. 滥用",
+    "example": "Drug abuse is a serious problem in many communities.",
+    "exampleTranslation": "药物滥用是许多社区的严重问题。"
+  },
+  {
+    "word": "accommodate",
+    "phonetic": "/əˈkɑːmədeɪt/",
+    "meaning": "v. 容纳；提供住宿；适应",
+    "example": "The hotel can accommodate up to 300 guests.",
+    "exampleTranslation": "这家酒店最多可容纳300位客人。"
+  },
+  {
+    "word": "acquaint",
+    "phonetic": "/əˈkweɪnt/",
+    "meaning": "v. 使熟悉；使认识",
+    "example": "You should acquaint yourself with the rules first.",
+    "exampleTranslation": "你应该先熟悉规则。"
+  },
+  {
+    "word": "activate",
+    "phonetic": "/ˈæktɪveɪt/",
+    "meaning": "v. 激活；使活动",
+    "example": "You need to activate your account before using it.",
+    "exampleTranslation": "你需要先激活你的账户才能使用。"
+  },
+  {
+    "word": "acute",
+    "phonetic": "/əˈkjuːt/",
+    "meaning": "adj. 急性的；敏锐的",
+    "example": "She has an acute sense of hearing.",
+    "exampleTranslation": "她有敏锐的听觉。"
+  },
+  {
+    "word": "adhere",
+    "phonetic": "/ədˈhɪr/",
+    "meaning": "v. 遵守；坚持；粘附",
+    "example": "We must adhere to the safety regulations.",
+    "exampleTranslation": "我们必须遵守安全规定。"
+  },
+  {
+    "word": "adjacent",
+    "phonetic": "/əˈdʒeɪsnt/",
+    "meaning": "adj. 邻近的；毗连的",
+    "example": "The library is adjacent to the student center.",
+    "exampleTranslation": "图书馆毗邻学生中心。"
+  },
+  {
+    "word": "administer",
+    "phonetic": "/ədˈmɪnɪstər/",
+    "meaning": "v. 管理；执行；给予",
+    "example": "The nurse administered the medicine to the patient.",
+    "exampleTranslation": "护士给病人用药。"
+  },
+  {
+    "word": "adolescent",
+    "phonetic": "/ˌædəˈlesnt/",
+    "meaning": "n. 青少年 adj. 青春期的",
+    "example": "Adolescent behavior can be challenging for parents.",
+    "exampleTranslation": "青少年行为对父母来说可能很有挑战性。"
+  },
+  {
+    "word": "adverse",
+    "phonetic": "/ˈædvɜːrs/",
+    "meaning": "adj. 不利的；相反的",
+    "example": "The medicine may have adverse side effects.",
+    "exampleTranslation": "这种药可能有不良副作用。"
+  },
+  {
+    "word": "advocate",
+    "phonetic": "/ˈædvəkeɪt/",
+    "meaning": "v. 提倡；主张 n. 提倡者",
+    "example": "He advocates for better healthcare policies.",
+    "exampleTranslation": "他提倡更好的医疗政策。"
+  },
+  {
+    "word": "aesthetic",
+    "phonetic": "/esˈθetɪk/",
+    "meaning": "adj. 美学的；审美的",
+    "example": "The design combines functionality with aesthetic appeal.",
+    "exampleTranslation": "这个设计将功能性与美学吸引力相结合。"
+  },
+  {
+    "word": "affiliate",
+    "phonetic": "/əˈfɪlieɪt/",
+    "meaning": "v. 使附属；加入 n. 附属机构",
+    "example": "The hospital is affiliated with the university.",
+    "exampleTranslation": "这家医院附属于该大学。"
+  },
+  {
+    "word": "affirm",
+    "phonetic": "/əˈfɜːrm/",
+    "meaning": "v. 肯定；确认",
+    "example": "The court affirmed the lower court's decision.",
+    "exampleTranslation": "法院维持了下级法院的判决。"
+  },
+  {
+    "word": "aggravate",
+    "phonetic": "/ˈæɡrəveɪt/",
+    "meaning": "v. 加重；使恶化",
+    "example": "Smoking will aggravate your condition.",
+    "exampleTranslation": "吸烟会加重你的病情。"
+  },
+  {
+    "word": "aggregate",
+    "phonetic": "/ˈæɡrɪɡət/",
+    "meaning": "n. 总数 adj. 总计的",
+    "example": "The aggregate cost of the project exceeded the budget.",
+    "exampleTranslation": "项目的总成本超出了预算。"
+  },
+  {
+    "word": "agony",
+    "phonetic": "/ˈæɡəni/",
+    "meaning": "n. 极度痛苦",
+    "example": "She was in agony after the surgery.",
+    "exampleTranslation": "手术后她痛苦不堪。"
+  },
+  {
+    "word": "alien",
+    "phonetic": "/ˈeɪliən/",
+    "meaning": "adj. 外国的；陌生的 n. 外国人",
+    "example": "The concept was completely alien to me.",
+    "exampleTranslation": "这个概念对我来说完全陌生。"
+  },
+  {
+    "word": "alleviate",
+    "phonetic": "/əˈliːvieɪt/",
+    "meaning": "v. 减轻；缓解",
+    "example": "This medicine will alleviate your pain.",
+    "exampleTranslation": "这种药会缓解你的疼痛。"
+  },
+  {
+    "word": "allocate",
+    "phonetic": "/ˈæləkeɪt/",
+    "meaning": "v. 分配；拨出",
+    "example": "The government allocated funds for education.",
+    "exampleTranslation": "政府为教育拨款。"
+  },
+  {
+    "word": "ambiguous",
+    "phonetic": "/æmˈbɪɡjuəs/",
+    "meaning": "adj. 模棱两可的；含糊的",
+    "example": "The contract contains several ambiguous clauses.",
+    "exampleTranslation": "合同中有几处含糊的条款。"
+  },
+  {
+    "word": "ambitious",
+    "phonetic": "/æmˈbɪʃəs/",
+    "meaning": "adj. 有雄心的；野心勃勃的",
+    "example": "She is an ambitious entrepreneur with big dreams.",
+    "exampleTranslation": "她是一位有远大梦想的雄心勃勃的企业家。"
+  },
+  {
+    "word": "amend",
+    "phonetic": "/əˈmend/",
+    "meaning": "v. 修改；修订",
+    "example": "The constitution was amended to include new rights.",
+    "exampleTranslation": "宪法被修订以包含新的权利。"
+  },
+  {
+    "word": "analogy",
+    "phonetic": "/əˈnælədʒi/",
+    "meaning": "n. 类比；相似",
+    "example": "The teacher used an analogy to explain the concept.",
+    "exampleTranslation": "老师用一个类比来解释这个概念。"
+  },
+  {
+    "word": "anonymous",
+    "phonetic": "/əˈnɑːnɪməs/",
+    "meaning": "adj. 匿名的",
+    "example": "The donation was made by an anonymous benefactor.",
+    "exampleTranslation": "这笔捐款来自一位匿名捐助者。"
+  },
+  {
+    "word": "apparatus",
+    "phonetic": "/ˌæpəˈrætəs/",
+    "meaning": "n. 仪器；装置；机构",
+    "example": "The laboratory has sophisticated apparatus for research.",
+    "exampleTranslation": "实验室有精密的研究仪器。"
+  },
+  {
+    "word": "appease",
+    "phonetic": "/əˈpiːz/",
+    "meaning": "v. 平息；安抚",
+    "example": "The government tried to appease the protesters.",
+    "exampleTranslation": "政府试图安抚抗议者。"
+  },
+  {
+    "word": "arbitrary",
+    "phonetic": "/ˈɑːrbɪtreri/",
+    "meaning": "adj. 任意的；专制的",
+    "example": "The decision seemed arbitrary and unfair.",
+    "exampleTranslation": "这个决定似乎武断且不公平。"
+  },
+  {
+    "word": "articulate",
+    "phonetic": "/ɑːrˈtɪkjuleɪt/",
+    "meaning": "v. 清楚表达 adj. 善于表达的",
+    "example": "She articulated her ideas clearly in the presentation.",
+    "exampleTranslation": "她在演讲中清晰地表达了自己的想法。"
+  },
+  {
+    "word": "ascend",
+    "phonetic": "/əˈsend/",
+    "meaning": "v. 上升；攀登",
+    "example": "The elevator ascended to the 50th floor.",
+    "exampleTranslation": "电梯上升到第50层。"
+  },
+  {
+    "word": "assault",
+    "phonetic": "/əˈsɔːlt/",
+    "meaning": "n. 攻击；袭击 v. 袭击",
+    "example": "He was charged with assault and battery.",
+    "exampleTranslation": "他被指控殴打和人身攻击。"
+  },
+  {
+    "word": "assert",
+    "phonetic": "/əˈsɜːrt/",
+    "meaning": "v. 断言；主张；维护",
+    "example": "The leader asserted his authority over the group.",
+    "exampleTranslation": "领导者在团队中维护自己的权威。"
+  },
+  {
+    "word": "assimilate",
+    "phonetic": "/əˈsɪməleɪt/",
+    "meaning": "v. 吸收；同化",
+    "example": "Immigrants often assimilate into the local culture over time.",
+    "exampleTranslation": "移民往往随时间融入当地文化。"
+  },
+  {
+    "word": "attribute",
+    "phonetic": "/əˈtrɪbjuːt/",
+    "meaning": "v. 归因于 n. 属性",
+    "example": "She attributes her success to hard work.",
+    "exampleTranslation": "她将成功归因于努力工作。"
+  },
+  {
+    "word": "authentic",
+    "phonetic": "/ɔːˈθentɪk/",
+    "meaning": "adj. 真正的；可靠的",
+    "example": "This is an authentic painting by Van Gogh.",
+    "exampleTranslation": "这是一幅梵高的真迹。"
+  },
+  {
+    "word": "authoritative",
+    "phonetic": "/əˈθɔːrəteɪtɪv/",
+    "meaning": "adj. 权威的；命令式的",
+    "example": "This is the most authoritative book on the subject.",
+    "exampleTranslation": "这是关于这个主题最权威的书。"
+  },
+  {
+    "word": "autonomous",
+    "phonetic": "/ɔːˈtɑːnəməs/",
+    "meaning": "adj. 自治的；自主的",
+    "example": "The region has become an autonomous area.",
+    "exampleTranslation": "该地区已成为自治区。"
+  },
+  {
+    "word": "avail",
+    "phonetic": "/əˈveɪl/",
+    "meaning": "v. 有益于 n. 效用",
+    "example": "All our efforts availed us little.",
+    "exampleTranslation": "我们所有的努力收效甚微。"
+  },
+  {
+    "word": "avert",
+    "phonetic": "/əˈvɜːrt/",
+    "meaning": "v. 避免；转移",
+    "example": "Quick action averted a major disaster.",
+    "exampleTranslation": "迅速行动避免了一场大灾难。"
+  },
+  {
+    "word": "baffle",
+    "phonetic": "/ˈbæfl/",
+    "meaning": "v. 使困惑；难住",
+    "example": "The strange phenomenon baffled scientists.",
+    "exampleTranslation": "这种奇怪的现象难住了科学家。"
+  },
+  {
+    "word": "barren",
+    "phonetic": "/ˈbærən/",
+    "meaning": "adj. 贫瘠的；不育的",
+    "example": "Nothing grows in this barren land.",
+    "exampleTranslation": "这片贫瘠的土地上什么也不长。"
+  },
+  {
+    "word": "beforehand",
+    "phonetic": "/bɪˈfɔːrhænd/",
+    "meaning": "adv. 事先；预先",
+    "example": "Please let me know beforehand if you can't come.",
+    "exampleTranslation": "如果你不能来，请事先通知我。"
+  },
+  {
+    "word": "betray",
+    "phonetic": "/bɪˈtreɪ/",
+    "meaning": "v. 背叛；泄露",
+    "example": "He betrayed his friend's trust.",
+    "exampleTranslation": "他背叛了朋友的信任。"
+  },
+  {
+    "word": "bizarre",
+    "phonetic": "/bɪˈzɑːr/",
+    "meaning": "adj. 奇怪的；怪异的",
+    "example": "The movie had a bizarre ending that shocked everyone.",
+    "exampleTranslation": "电影有个怪异的结局，震惊了所有人。"
+  },
+  {
+    "word": "blunt",
+    "phonetic": "/blʌnt/",
+    "meaning": "adj. 钝的；直率的",
+    "example": "Let me be blunt: your performance needs improvement.",
+    "exampleTranslation": "恕我直言：你的表现需要改进。"
+  },
+  {
+    "word": "boycott",
+    "phonetic": "/ˈbɔɪkɑːt/",
+    "meaning": "v. 抵制；拒绝参加",
+    "example": "They decided to boycott the company's products.",
+    "exampleTranslation": "他们决定抵制该公司的产品。"
+  }
+]
