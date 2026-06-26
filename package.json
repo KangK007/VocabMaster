@@ -6,8 +6,10 @@
   "scripts": {
     "start": "python app.py",
     "install-deps": "pip install -r requirements.txt",
-    "test": "python -m unittest discover -s tests && node tests/core-utils.test.js && node tests/learning-intelligence.test.js",
-    "check": "python -m py_compile app.py build_wordbanks.py generate_icon.py setup_shortcuts.py run.pyw && node --check src/app.js && node --check src/core-utils.js && node --check src/learning-intelligence.js"
+    "test": "python -m unittest discover -s tests && node tests/core-utils.test.js && node tests/learning-intelligence.test.js && node tests/sm2-scheduler.test.js && node tests/search-utils.test.js",
+    "check": "python scripts/check_python_syntax.py && node --check src/app.js && node --check src/core-utils.js && node --check src/learning-intelligence.js && node --check src/sm2-scheduler.js && node --check src/search-utils.js",
+    "e2e": "playwright test",
+    "e2e:ui": "playwright test --ui"
   },
   "keywords": [
     "vocabulary",
@@ -16,5 +18,8 @@
     "education"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.54.0"
+  }
 }

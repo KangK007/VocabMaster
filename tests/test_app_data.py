@@ -27,6 +27,7 @@ class AppDataTests(unittest.TestCase):
             app.STATS_DIR = root / "stats"
             app.SETTINGS_DIR = root / "settings"
             app.FAVORITES_DIR = root / "favorites"
+            app.BACKUPS_DIR = root / "backups"
             app.ensure_dirs()
 
             (app.PROGRESS_DIR / "progress.json").write_text(
@@ -71,6 +72,7 @@ class AppDataTests(unittest.TestCase):
             app.STATS_DIR = root / "stats"
             app.SETTINGS_DIR = root / "settings"
             app.FAVORITES_DIR = root / "favorites"
+            app.BACKUPS_DIR = root / "backups"
             app.ensure_dirs()
 
             api = app.VocabAPI()
@@ -92,6 +94,78 @@ class AppDataTests(unittest.TestCase):
             self.assertEqual(api.get_favorites(), ["ability_cet4"])
             self.assertEqual(api.get_custom_words()["cet4"][0]["word"], "restore")
             self.assertNotIn("unknown", api.get_custom_words())
+
+    def test_restore_snapshot_creates_safety_backup_before_overwrite(self):
+        app = importlib.import_module("app")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            app.DATA_DIR = root
+            app.WORDS_DATA_DIR = root / "words"
+            app.PROGRESS_DIR = root / "progress"
+            app.STATS_DIR = root / "stats"
+            app.SETTINGS_DIR = root / "settings"
+            app.FAVORITES_DIR = root / "favorites"
+            app.BACKUPS_DIR = root / "backups"
+            app.ensure_dirs()
+
+            (app.PROGRESS_DIR / "progress.json").write_text(
+                json.dumps({"old_cet4": {"interval": 9}}),
+                encoding="utf-8",
+            )
+            (app.STATS_DIR / "stats.json").write_text(
+                json.dumps({"daily": {}, "streak": 3}),
+                encoding="utf-8",
+            )
+            (app.SETTINGS_DIR / "settings.json").write_text(
+                json.dumps({"fontSize": 18, "dailyGoal": 30, "darkMode": False}),
+                encoding="utf-8",
+            )
+
+            result = app.VocabAPI().restore_snapshot({
+                "progress": {"new_cet4": {"interval": 1}},
+                "statistics": {"daily": {}, "streak": 0},
+                "settings": {"fontSize": 20, "dailyGoal": 20, "darkMode": True},
+                "favorites": [],
+                "customWords": {}
+            })
+
+            self.assertTrue(result["success"])
+            backups = list(app.BACKUPS_DIR.glob("vocabmaster-pre-restore-*.json"))
+            self.assertEqual(len(backups), 1)
+            backup = json.loads(backups[0].read_text(encoding="utf-8"))
+            self.assertIn("old_cet4", backup["progress"])
+
+    def test_reset_progress_creates_safety_backup_before_delete(self):
+        app = importlib.import_module("app")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            root = Path(tmp)
+            app.DATA_DIR = root
+            app.WORDS_DATA_DIR = root / "words"
+            app.PROGRESS_DIR = root / "progress"
+            app.STATS_DIR = root / "stats"
+            app.SETTINGS_DIR = root / "settings"
+            app.FAVORITES_DIR = root / "favorites"
+            app.BACKUPS_DIR = root / "backups"
+            app.ensure_dirs()
+
+            (app.PROGRESS_DIR / "progress.json").write_text(
+                json.dumps({"old_cet4": {"interval": 9}}),
+                encoding="utf-8",
+            )
+            (app.STATS_DIR / "stats.json").write_text(
+                json.dumps({"daily": {}, "streak": 3}),
+                encoding="utf-8",
+            )
+
+            result = app.VocabAPI().reset_progress()
+
+            self.assertTrue(result["success"])
+            backups = list(app.BACKUPS_DIR.glob("vocabmaster-pre-reset-*.json"))
+            self.assertEqual(len(backups), 1)
+            backup = json.loads(backups[0].read_text(encoding="utf-8"))
+            self.assertIn("old_cet4", backup["progress"])
 
 
 if __name__ == "__main__":

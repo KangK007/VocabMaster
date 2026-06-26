@@ -45,6 +45,7 @@ PROGRESS_DIR = DATA_DIR / 'progress'
 STATS_DIR = DATA_DIR / 'stats'
 SETTINGS_DIR = DATA_DIR / 'settings'
 FAVORITES_DIR = DATA_DIR / 'favorites'
+BACKUPS_DIR = DATA_DIR / 'backups'
 VALID_CATEGORIES = {'cet4', 'cet6', 'postgraduate', 'ielts', 'toefl', 'custom'}
 
 # Single-instance lock
@@ -96,7 +97,7 @@ def start_single_instance_listener(window):
 
 
 def ensure_dirs():
-    for d in [DATA_DIR, WORDS_DATA_DIR, PROGRESS_DIR, STATS_DIR, SETTINGS_DIR, FAVORITES_DIR]:
+    for d in [DATA_DIR, WORDS_DATA_DIR, PROGRESS_DIR, STATS_DIR, SETTINGS_DIR, FAVORITES_DIR, BACKUPS_DIR]:
         d.mkdir(parents=True, exist_ok=True)
 
 
@@ -303,6 +304,13 @@ class VocabAPI:
             'customWords': self.get_custom_words()
         }
 
+    def _create_safety_backup(self, reason):
+        safe_reason = ''.join(c if c.isalnum() or c in ('-', '_') else '-' for c in str(reason))[:40]
+        timestamp = datetime.now().strftime('%Y%m%d-%H%M%S')
+        filepath = BACKUPS_DIR / f'vocabmaster-{safe_reason}-{timestamp}.json'
+        write_json(str(filepath), self.export_snapshot())
+        return str(filepath)
+
     def restore_snapshot(self, snapshot):
         if not isinstance(snapshot, dict):
             return {'success': False, 'message': '备份文件格式不正确'}
@@ -320,6 +328,7 @@ class VocabAPI:
         if not isinstance(custom_words, dict):
             custom_words = {}
 
+        self._create_safety_backup('pre-restore')
         write_json(str(PROGRESS_DIR / 'progress.json'), progress)
         write_json(str(STATS_DIR / 'stats.json'), stats)
         write_json(str(SETTINGS_DIR / 'settings.json'), settings)
@@ -438,6 +447,7 @@ class VocabAPI:
     def reset_progress(self):
         try:
             import shutil
+            self._create_safety_backup('pre-reset')
             if PROGRESS_DIR.exists():
                 shutil.rmtree(str(PROGRESS_DIR))
             if STATS_DIR.exists():

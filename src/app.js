@@ -22,6 +22,16 @@ const {
     suggestion: ''
   })
 } = window.VocabMasterLearning || {};
+const {
+  calculateSM2 = null,
+  isDue: schedulerIsDue = null,
+  buildLearningQueue = null,
+  wordKeyFor: schedulerWordKeyFor = null
+} = window.VocabMasterScheduler || {};
+const {
+  filterWords: filterSearchWords = null,
+  renderSearchResultsHtml = null
+} = window.VocabMasterSearch || {};
 
 // --- API Helper ---
 // Wraps pywebview API calls with error handling
@@ -83,6 +93,9 @@ function fallbackAPI(method, ...args) {
 // --- SM-2 Spaced Repetition Algorithm ---
 const SM2 = {
   calc(q, card) {
+    if (calculateSM2) {
+      return calculateSM2(q, card, today());
+    }
     if (!card) {
       card = { interval: 0, repetitions: 0, ef: 2.5, nextReview: null };
     }
@@ -114,9 +127,12 @@ const SM2 = {
   },
 
   isDue(card) {
+    if (schedulerIsDue) {
+      return schedulerIsDue(card, today());
+    }
     if (!card || !card.nextReview) return true;
-    const today = localDateKey();
-    return card.nextReview <= today;
+    const todayStr = localDateKey();
+    return card.nextReview <= todayStr;
   }
 };
 
@@ -186,6 +202,9 @@ const dom = {
 
 // --- Helpers ---
 function wordKey(word) {
+  if (schedulerWordKeyFor) {
+    return schedulerWordKeyFor(word, state.category);
+  }
   return `${word.word.toLowerCase()}_${state.category}`;
 }
 
@@ -301,6 +320,23 @@ async function loadWordList() {
 }
 
 function buildQueue() {
+  if (buildLearningQueue) {
+    state.currentWords = buildLearningQueue({
+      words: state.wordList,
+      progress: state.progress,
+      category: state.category,
+      mode: state.mode,
+      settings: state.settings,
+      today: today(),
+      favorites: [...state.favorites],
+      shuffleFn: shuffle,
+      buildWeakQueue
+    });
+    state.currentIndex = 0;
+    state.testState = null;
+    return;
+  }
+
   const todayStr = today();
 
   // Count how many words are due for review (SM-2 forgetting curve)
@@ -311,7 +347,7 @@ function buildQueue() {
   });
 
   if (state.mode === 'review') {
-    // ALL due words must be reviewed — no artificial cap
+    // ALL due words must be reviewed; no artificial cap
     // Sort by priority: overdue first, then harder words (lower EF) first
     dueWords.sort((a, b) => {
       const ca = state.progress[wordKey(a)];
@@ -958,27 +994,28 @@ function initSearch() {
 }
 
 function filterWords(query) {
-  const matches = state.wordList.filter(w =>
-    w.word.toLowerCase().includes(query) ||
-    (w.meaning && w.meaning.includes(query))
-  ).slice(0, 20);
+  const matches = filterSearchWords
+    ? filterSearchWords(state.wordList, query, 20)
+    : state.wordList.filter(w =>
+      w.word.toLowerCase().includes(query) ||
+      (w.meaning && w.meaning.includes(query))
+    ).slice(0, 20);
   state.searchResults = matches;
   renderSearchResults(matches);
 }
 
 function renderSearchResults(matches) {
   const container = $('#search-results');
-  if (matches.length === 0) {
-    container.innerHTML = '<div style="padding:12px 14px;color:var(--text-muted);font-size:13px;">未找到匹配单词</div>';
-    container.classList.add('show');
-    return;
-  }
-  container.innerHTML = matches.map(w => `
+  container.innerHTML = renderSearchResultsHtml
+    ? renderSearchResultsHtml(matches)
+    : (matches.length === 0
+      ? '<div style="padding:12px 14px;color:var(--text-muted);font-size:13px;">未找到匹配单词</div>'
+      : matches.map(w => `
     <div class="search-result-item" data-word="${escapeHtml(w.word)}">
       <span class="search-result-word">${escapeHtml(w.word)}</span>
       <span class="search-result-meaning">${escapeHtml(w.meaning || '')}</span>
     </div>
-  `).join('');
+  `).join(''));
   container.classList.add('show');
 
   container.querySelectorAll('.search-result-item').forEach(item => {

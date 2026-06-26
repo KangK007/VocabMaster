@@ -1,0 +1,21 @@
+{
+  "schemaVersion": 1,
+  "generatedFrom": "build_wordbanks.py",
+  "currentStatus": "project-maintained-demo-wordbanks",
+  "note": "Bundled word banks are small demo/core lists, not complete official exam syllabi.",
+  "categories": {
+    "cet4": { "file": "cet4.json", "count": 101, "source": "project-curated-demo" },
+    "cet6": { "file": "cet6.json", "count": 50, "source": "project-curated-demo" },
+    "postgraduate": { "file": "postgraduate.json", "count": 50, "source": "project-curated-demo" },
+    "ielts": { "file": "ielts.json", "count": 50, "source": "project-curated-demo" },
+    "toefl": { "file": "toefl.json", "count": 50, "source": "project-curated-demo" }
+  },
+  "candidateSources": [
+    {
+      "name": "ECDICT",
+      "url": "https://github.com/skywind3000/ECDICT",
+      "reportedLicense": "MIT",
+      "status": "candidate-not-imported"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+﻿# Python cache and build output
+__pycache__/
+*.py[cod]
+*.pyc.*
+.pytest_cache/
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Node dependencies and logs
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Local runtime data (default app data lives outside the repo)
+data/progress/
+data/stats/
+data/settings/
+data/words/
+data/favorites/
+
+# Local exports/backups
+vocabmaster-data-*.json
+*.tmp
+
+# OS/editor noise
+.DS_Store
+Thumbs.db
+
+# Test artifacts
+playwright-report/
+test-results/
+artifacts/
