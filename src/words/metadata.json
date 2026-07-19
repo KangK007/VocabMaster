@@ -1,21 +1,59 @@
 {
   "schemaVersion": 1,
-  "generatedFrom": "build_wordbanks.py",
-  "currentStatus": "project-maintained-demo-wordbanks",
-  "note": "Bundled word banks are small demo/core lists, not complete official exam syllabi.",
-  "categories": {
-    "cet4": { "file": "cet4.json", "count": 101, "source": "project-curated-demo" },
-    "cet6": { "file": "cet6.json", "count": 50, "source": "project-curated-demo" },
-    "postgraduate": { "file": "postgraduate.json", "count": 50, "source": "project-curated-demo" },
-    "ielts": { "file": "ielts.json", "count": 50, "source": "project-curated-demo" },
-    "toefl": { "file": "toefl.json", "count": 50, "source": "project-curated-demo" }
+  "generatedFrom": "scripts/import_ecdict_wordbanks.py",
+  "currentStatus": "ecdict-exam-tagged-wordbanks-with-generated-examples",
+  "note": "Word banks are generated from ECDICT exam tags. They are not official exam syllabus files.",
+  "generatedDate": "2026-07-07",
+  "source": {
+    "name": "ECDICT",
+    "url": "https://github.com/skywind3000/ECDICT",
+    "rawCsvUrl": "https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv",
+    "license": "MIT",
+    "sourceRevision": "bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b",
+    "csvBlobSha": "c4ade63ea08cf39d9c3475e96929036d64d94c94"
   },
-  "candidateSources": [
-    {
-      "name": "ECDICT",
-      "url": "https://github.com/skywind3000/ECDICT",
-      "reportedLicense": "MIT",
-      "status": "candidate-not-imported"
+  "fieldNotes": {
+    "example": "Generated locally from each word's part of speech and Chinese meaning; not copied from an external example corpus.",
+    "exampleTranslation": "Generated Chinese translation paired with the local example sentence.",
+    "phoneticFallback": "N/A"
+  },
+  "categories": {
+    "cet4": {
+      "file": "cet4.json",
+      "count": 3849,
+      "source": "ECDICT",
+      "sourceTag": "cet4",
+      "label": "CET-4"
+    },
+    "cet6": {
+      "file": "cet6.json",
+      "count": 5407,
+      "source": "ECDICT",
+      "sourceTag": "cet6",
+      "label": "CET-6"
+    },
+    "postgraduate": {
+      "file": "postgraduate.json",
+      "count": 4801,
+      "source": "ECDICT",
+      "sourceTag": "ky",
+      "label": "Postgraduate English"
+    },
+    "ielts": {
+      "file": "ielts.json",
+      "count": 5040,
+      "source": "ECDICT",
+      "sourceTag": "ielts",
+      "label": "IELTS"
+    },
+    "toefl": {
+      "file": "toefl.json",
+      "count": 6974,
+      "source": "ECDICT",
+      "sourceTag": "toefl",
+      "label": "TOEFL"
     }
-  ]
+  },
+  "exampleGeneratedFrom": "scripts/generate_practical_examples.py",
+  "exampleGeneratedDate": "2026-07-19"
 }

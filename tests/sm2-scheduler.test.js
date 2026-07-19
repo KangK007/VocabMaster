@@ -2,6 +2,7 @@ const assert = require('assert');
 const {
   calculateSM2,
   isDue,
+  buildMixedQueue,
   buildLearningQueue,
   wordKeyFor
 } = require('../src/sm2-scheduler');
@@ -71,3 +72,27 @@ const weakQueue = buildLearningQueue({
   buildWeakQueue
 });
 assert.strictEqual(weakQueue[0].word, 'beta');
+
+const mixedQueue = buildMixedQueue({
+  words,
+  progress,
+  category: 'cet4',
+  settings: { dailyGoal: 3 },
+  today,
+  newWords: [words[3]],
+  shuffleFn: items => items
+});
+assert.deepStrictEqual(mixedQueue.words.map(w => w.word), ['alpha', 'beta', 'delta']);
+assert.strictEqual(mixedQueue.reviewCount, 2);
+assert.strictEqual(mixedQueue.newCount, 1);
+
+const mixedFromBuildQueue = buildLearningQueue({
+  words,
+  progress,
+  category: 'cet4',
+  mode: 'mixed',
+  settings: { dailyGoal: 3 },
+  today,
+  shuffleFn: items => items
+});
+assert.deepStrictEqual(mixedFromBuildQueue.map(w => w.word), ['alpha', 'beta', 'delta']);

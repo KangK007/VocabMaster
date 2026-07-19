@@ -4,9 +4,11 @@
 
 **版本：** 2.0.0
 
+项目版本号以根目录 [VERSION](VERSION) 为准，`package.json`、`app.py`、`README.md` 和 `CHANGELOG.md` 会通过 `npm run check` 做一致性检查。
+
 ## 功能特性
 
-- **内置词库**：CET-4、CET-6、考研、雅思、托福核心词汇，每个单词包含释义、音标、例句。
+- **内置词库**：基于 ECDICT 考试标签生成 CET-4、CET-6、考研、雅思、托福词库，包含单词、释义和音标；ECDICT 未提供例句的词条会显示明确占位说明。
 - **四种学习模式**：
   - **复习模式**：基于 SM-2 算法智能安排到期复习。
   - **新学模式**：在完成到期复习后补足每日目标。
@@ -29,7 +31,7 @@
 
 ### 环境要求
 
-- Python 3.8+
+- Python 3.12+（源码运行、测试和发布构建建议使用同一主版本）
 - Windows 10/11（使用 Edge WebView2）
 
 ### 安装与运行
@@ -38,8 +40,8 @@
 # 1. 安装依赖
 pip install -r requirements.txt
 
-# 2. （可选）重新生成内置示例词库
-python build_wordbanks.py
+# 2. （可选）重新生成 ECDICT 内置词库
+python scripts/import_ecdict_wordbanks.py --download
 
 # 3. 运行应用（双击 run.pyw 或通过命令行）
 pythonw run.pyw
@@ -57,9 +59,9 @@ python setup_shortcuts.py
 
 | 按键 | 功能 |
 |------|------|
-| `1` | 标记为“忘记了”（显示释义） |
-| `2` | 标记为“记得了”（显示释义） |
-| `3` | 标记为“太简单”（显示释义） |
+| `1` | 标记为“认识”（显示释义） |
+| `2` | 标记为“模糊”（显示释义） |
+| `3` | 标记为“忘记”（显示释义） |
 | `→` | 切换到下一个单词 |
 | `←` | 返回上一个单词 |
 | `Space` | 发音 |
@@ -87,7 +89,7 @@ VocabMaster/
 ├── run.pyw                # 桌面启动入口（双击运行，无命令行窗口）
 ├── app.py                 # Python 桌面应用主程序
 ├── requirements.txt       # Python 依赖
-├── build_wordbanks.py     # 词库生成脚本
+├── build_wordbanks.py     # 历史示例词库生成脚本
 ├── generate_icon.py       # 图标生成脚本
 ├── setup_shortcuts.py     # 快捷方式和开机自启设置
 ├── launch.bat             # 正常启动脚本
@@ -122,7 +124,9 @@ VocabMaster/
 
 ## 词库说明
 
-当前仓库内置的是示例/核心小词库，不是完整考试大纲词库。当前数量约为：CET-4 101 个，CET-6/考研/雅思/托福各 50 个。若用于正式备考，应补充词库来源、许可、生成参数和词条校验流程。
+当前仓库内置词库由 ECDICT 的考试标签生成，数量为：CET-4 3849 个、CET-6 5407 个、考研 4801 个、IELTS 5040 个、TOEFL 6974 个。
+
+这些词库是 ECDICT 标签词库，不是教育部、考试院、IELTS 或 ETS 发布的官方考试大纲原件，不能宣传为“官方完整考纲”。词库来源、许可、上游 commit、字段映射和校验流程见 [docs/wordbank-sources.md](docs/wordbank-sources.md)。
 
 ## 数据位置
 
@@ -133,6 +137,87 @@ VocabMaster/
 - Linux: `$XDG_DATA_HOME/VocabMaster` 或 `~/.local/share/VocabMaster`
 
 如果需要便携模式，可以在启动前设置环境变量 `VOCABMASTER_PORTABLE=1`，此时数据会写入项目内 `data/`。
+
+## 数据安全与恢复
+
+- 本地数据文件使用 `schemaVersion` 包装，启动时会自动迁移旧版裸 JSON 数据。
+- 写入进度、统计、设置、收藏和自定义词库时使用原子写入，降低写入中断造成的数据损坏风险。
+- 恢复备份和重置进度前会自动创建安全备份。
+- 如果 `progress.json` 等数据文件损坏，应用会尝试从最近的本地备份恢复对应数据。
+- 设置弹窗中的“管理备份”可以查看最近安全备份，并执行恢复或删除。
+- 自动安全备份默认只保留最近 20 个。
+- 导入词库会先统计新增、重复和无效词条数量；取消导入或文件格式错误不会写入现有词库。
+
+## Windows 打包、安装与卸载
+
+### 生成 Windows 可执行程序
+
+发布构建要求 Python 3.12 或 3.13。先创建独立构建环境：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/setup_build_env.ps1 -PythonPath "C:\path\to\python.exe"
+```
+
+`requirements.txt` 和 `requirements-build.txt` 是由 `pip-tools` 根据对应 `.in` 文件生成的锁文件。不要使用包含其他科研包的全局环境生成发布包。
+
+然后执行清洁构建：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/build_windows.ps1 -Clean
+```
+
+成功后产物位于：
+
+```text
+dist/VocabMaster/VocabMaster.exe
+```
+
+构建脚本只写入项目内的 `build/` 和 `dist/`，不会创建桌面快捷方式或把压缩包写到桌面。可运行以下命令验证真实窗口生命周期：
+
+```powershell
+.venv-build\Scripts\python.exe scripts\desktop_smoke.py --app dist\VocabMaster\VocabMaster.exe
+```
+
+### 运行要求
+
+- Windows 10/11。
+- 系统可用 Edge WebView2 Runtime。大多数 Windows 10/11 已预装；若无法启动窗口，应先安装 Microsoft Edge WebView2 Runtime。
+- 用户数据默认保存到 `%APPDATA%\VocabMaster`，不会写入安装目录。
+
+### 安装方式
+
+安装器使用 Inno Setup 7。在已有 `dist/VocabMaster/` 的前提下执行：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts/build_installer.ps1 -IsccPath "C:\path\to\ISCC.exe"
+```
+
+安装器输出到 `dist/installer/`，默认安装到当前用户的 `%LOCALAPPDATA%\Programs\VocabMaster`，不要求管理员权限。离线静默安装可使用 Inno Setup 标准参数 `/VERYSILENT /NORESTART`。
+
+当前安装器尚未进行 Authenticode 签名，也没有自动更新服务；这两项是对外发布前的阻断项。不得用占位网址或测试证书替代真实发布者材料。
+
+### 卸载方式
+
+正式安装后可从 Windows“已安装的应用”卸载；目录包可直接删除复制出的程序目录。
+
+默认卸载不删除用户数据。若用户明确要清空所有学习数据，可手动删除：
+
+```text
+%APPDATA%\VocabMaster
+```
+
+删除该目录会移除学习进度、统计、设置、收藏、自定义词库和本地安全备份，执行前建议先导出备份。
+
+## 隐私与许可证
+
+- 项目许可证：`LICENSE`（MIT）。
+- 隐私说明：`docs/privacy-policy.md`。
+- 第三方软件和数据声明：`THIRD_PARTY_NOTICES.md`。
+- ECDICT 完整许可证：`docs/licenses/ECDICT-LICENSE.txt`。
+
+发布构建会把可获得的第三方许可证文本收集到 `dist/VocabMaster/licenses/`。软件市场提交前仍需由真实发布者补充支持地址或隐私联系渠道。
+
+Windows 分发渠道、签名和更新门禁见 `docs/distribution.md`。面向 Microsoft Store 时应在获得真实 Partner Center 发布者身份后生成 MSIX；Inno Setup 仅作为已签名的直接下载或离线分发渠道。
 
 ## 导入自定义词库
 

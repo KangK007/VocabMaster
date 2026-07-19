@@ -1,15 +1,19 @@
 {
   "name": "vocab-master",
   "version": "2.0.0",
-  "description": "高效英语背单词桌面软件 - 采用SM-2间隔重复算法，科学记忆英语词汇",
+  "description": "Offline desktop vocabulary trainer with SM-2 spaced repetition for English learners.",
   "main": "app.py",
   "scripts": {
     "start": "python app.py",
     "install-deps": "pip install -r requirements.txt",
-    "test": "python -m unittest discover -s tests && node tests/core-utils.test.js && node tests/learning-intelligence.test.js && node tests/sm2-scheduler.test.js && node tests/search-utils.test.js",
-    "check": "python scripts/check_python_syntax.py && node --check src/app.js && node --check src/core-utils.js && node --check src/learning-intelligence.js && node --check src/sm2-scheduler.js && node --check src/search-utils.js",
+    "test": "python -m unittest discover -s tests && node tests/core-utils.test.js && node tests/learning-intelligence.test.js && node tests/sm2-scheduler.test.js && node tests/search-utils.test.js && node tests/stats-renderer.test.js && node tests/memory-curve.test.js && node tests/tts.test.js && node tests/morphology.test.js && node tests/settings-ui.test.js && node tests/backup-actions.test.js && node tests/word-form.test.js && node tests/error-book.test.js && node tests/keyboard-shortcuts.test.js",
+    "check": "python scripts/check_python_syntax.py && python scripts/check_version_consistency.py && python scripts/validate_wordbanks.py && node --check src/app.js && node --check src/core-utils.js && node --check src/learning-intelligence.js && node --check src/sm2-scheduler.js && node --check src/search-utils.js && node --check src/stats-renderer.js && node --check src/memory-curve.js && node --check src/tts.js && node --check src/morphology.js && node --check src/settings-ui.js && node --check src/backup-actions.js && node --check src/word-form.js && node --check src/error-book.js && node --check src/keyboard-shortcuts.js",
     "e2e": "playwright test",
-    "e2e:ui": "playwright test --ui"
+    "e2e:ui": "playwright test --ui",
+    "desktop:smoke": "python scripts/run_with_project_python.py scripts/desktop_smoke.py",
+    "installer:smoke": "python scripts/run_with_project_python.py scripts/installer_smoke.py",
+    "release:check": "powershell -ExecutionPolicy Bypass -File scripts/check_release_artifacts.ps1",
+    "clean:generated": "powershell -ExecutionPolicy Bypass -File scripts/clean_generated_artifacts.ps1"
   },
   "keywords": [
     "vocabulary",
@@ -17,7 +21,7 @@
     "spaced-repetition",
     "education"
   ],
-  "author": "",
+  "author": "VocabMaster contributors",
   "license": "MIT",
   "devDependencies": {
     "@playwright/test": "^1.54.0"

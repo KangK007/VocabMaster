@@ -8,17 +8,11 @@
   }
 })(typeof window !== 'undefined' ? window : globalThis, function () {
   const DAY_MS = 24 * 60 * 60 * 1000;
-
-  function pad2(value) {
-    return String(value).padStart(2, '0');
-  }
-
-  function localDateKey(date = new Date()) {
-    return [
-      date.getFullYear(),
-      pad2(date.getMonth() + 1),
-      pad2(date.getDate())
-    ].join('-');
+  const utils = (typeof window !== 'undefined' && window.VocabMasterUtils)
+    || (typeof require === 'function' ? require('./core-utils') : null);
+  const { localDateKey } = utils || {};
+  if (typeof localDateKey !== 'function') {
+    throw new Error('VocabMasterUtils.localDateKey is required before sm2-scheduler.js');
   }
 
   function addDays(dateKey, days) {
@@ -88,6 +82,39 @@
       });
   }
 
+  function buildMixedQueue({
+    words,
+    progress,
+    category,
+    settings,
+    today,
+    newWords = null,
+    shuffleFn = defaultShuffle
+  }) {
+    const dateKey = today || localDateKey();
+    const allWords = Array.isArray(words) ? words : [];
+    const allProgress = progress || {};
+    const dailyGoal = Math.max(1, Number(settings && settings.dailyGoal) || 30);
+    const dueWords = buildDueWords(allWords, allProgress, category, dateKey);
+    const dueKeys = new Set(dueWords.map(word => wordKeyFor(word, category)));
+    const newLimit = Math.max(0, dailyGoal - dueWords.length);
+    const candidates = Array.isArray(newWords)
+      ? newWords
+      : shuffleFn(allWords.filter(word => {
+        const card = allProgress[wordKeyFor(word, category)];
+        return !card || card.repetitions === 0;
+      }));
+    const plannedNewWords = candidates
+      .filter(word => !dueKeys.has(wordKeyFor(word, category)))
+      .slice(0, newLimit);
+
+    return {
+      words: [...dueWords, ...plannedNewWords],
+      reviewCount: dueWords.length,
+      newCount: plannedNewWords.length
+    };
+  }
+
   function buildLearningQueue({
     words,
     progress,
@@ -105,17 +132,27 @@
     const dailyGoal = (settings && settings.dailyGoal) || 30;
     const dueWords = buildDueWords(allWords, allProgress, category, dateKey);
 
+    if (mode === 'mixed') {
+      return buildMixedQueue({
+        words: allWords,
+        progress: allProgress,
+        category,
+        settings,
+        today: dateKey,
+        shuffleFn
+      }).words;
+    }
+
     if (mode === 'review') {
       return dueWords;
     }
 
     if (mode === 'new') {
-      const remaining = Math.max(0, dailyGoal - dueWords.length);
       const newWords = allWords.filter(word => {
         const card = allProgress[wordKeyFor(word, category)];
         return !card || card.repetitions === 0;
       });
-      return shuffleFn(newWords).slice(0, remaining);
+      return shuffleFn(newWords).slice(0, dailyGoal);
     }
 
     if (mode === 'weak') {
@@ -143,6 +180,7 @@
   return {
     calculateSM2,
     isDue,
+    buildMixedQueue,
     buildLearningQueue,
     wordKeyFor
   };

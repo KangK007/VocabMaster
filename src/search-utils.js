@@ -7,14 +7,11 @@
     root.VocabMasterSearch = api;
   }
 })(typeof window !== 'undefined' ? window : globalThis, function (utils) {
-  const escape = utils && utils.escapeHtml
-    ? utils.escapeHtml
-    : (value) => String(value)
-      .replace(/&/g, '&amp;')
-      .replace(/</g, '&lt;')
-      .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;')
-      .replace(/'/g, '&#39;');
+  const resolvedUtils = utils || (typeof require === 'function' ? require('./core-utils') : null);
+  const escape = resolvedUtils && resolvedUtils.escapeHtml;
+  if (typeof escape !== 'function') {
+    throw new Error('VocabMasterUtils.escapeHtml is required before search-utils.js');
+  }
 
   function filterWords(words, query, limit = 20) {
     const normalized = String(query || '').trim().toLowerCase();

@@ -7,8 +7,14 @@
     root.VocabMasterLearning = api;
   }
 })(typeof window !== 'undefined' ? window : globalThis, function () {
-  function wordKeyFor(word, category) {
-    return `${String(word.word || '').toLowerCase()}_${category}`;
+  const utils = (typeof window !== 'undefined' && window.VocabMasterUtils)
+    || (typeof require === 'function' ? require('./core-utils') : null);
+  const scheduler = (typeof window !== 'undefined' && window.VocabMasterScheduler)
+    || (typeof require === 'function' ? require('./sm2-scheduler') : null);
+  const { localDateKey } = utils || {};
+  const { wordKeyFor } = scheduler || {};
+  if (typeof localDateKey !== 'function' || typeof wordKeyFor !== 'function') {
+    throw new Error('VocabMasterUtils and VocabMasterScheduler are required before learning-intelligence.js');
   }
 
   function daysBetween(a, b) {
@@ -33,7 +39,7 @@
   }
 
   function buildWeakQueue(words, progress, category, options = {}) {
-    const today = options.today || new Date().toISOString().slice(0, 10);
+    const today = options.today || localDateKey();
     const limit = options.limit || 20;
     const favorites = new Set(options.favorites || []);
 
@@ -58,7 +64,7 @@
       const card = progress[wordKeyFor(word, category)];
       if (!card || !card.nextReview) return false;
       const diff = daysBetween(today, card.nextReview);
-      return diff <= 1;
+      return diff === 1;
     }).length;
   }
 

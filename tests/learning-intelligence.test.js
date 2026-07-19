@@ -50,5 +50,19 @@ const report = createLearningReport({
 assert.strictEqual(report.todayStudied, 12);
 assert.strictEqual(report.accuracy, 58);
 assert.strictEqual(report.weakWords[0].word, 'abandon');
-assert(report.tomorrowDue >= 1, 'report should estimate upcoming review pressure');
+assert.strictEqual(report.tomorrowDue, 0, 'overdue cards should not be counted as due tomorrow');
 assert(report.suggestion.length > 0, 'report should provide a coaching suggestion');
+
+const exactTomorrowReport = createLearningReport({
+  words,
+  progress: {
+    abandon_cet4: { repetitions: 1, ef: 2.5, nextReview: '2026-06-20' },
+    ability_cet4: { repetitions: 1, ef: 2.5, nextReview: '2026-06-21' },
+    academic_cet4: { repetitions: 1, ef: 2.5, nextReview: '2026-06-22' },
+    adapt_cet4: { repetitions: 1, ef: 2.5, nextReview: '2026-06-23' }
+  },
+  category: 'cet4',
+  stats: { daily: {}, streak: 0 },
+  today: '2026-06-21'
+});
+assert.strictEqual(exactTomorrowReport.tomorrowDue, 1);

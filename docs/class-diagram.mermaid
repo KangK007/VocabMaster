@@ -1,0 +1,100 @@
+classDiagram
+    class VocabMasterUtils {
+        +escapeHtml(value) string
+        +localDateKey(date) string
+        +debounce(fn, delay) Function
+        +pad2(value) string
+    }
+
+    class VocabMasterScheduler {
+        +calculateSM2(quality, card, dateKey) Card
+        +isDue(card, dateKey) boolean
+        +buildLearningQueue(opts) Array
+        +buildMixedQueue(opts) QueueResult
+        +wordKeyFor(word, category) string
+    }
+
+    class VocabMasterLearning {
+        +scoreWeakWord(card, due) number
+        +buildWeakQueue(words, progress, cat, opts) Array
+        +incrementMetrics(stats, today, quality, newCard, oldCard) void
+        +getLearningMetrics(stats, progress) Metrics
+    }
+
+    class VocabMasterState {
+        +getState() State
+        +setState(partial) void
+        +subscribe(key, fn) void
+        +get(key) any
+        +set(key, value) void
+    }
+
+    class VocabMasterFlow {
+        +buildQueue() Array
+        +advanceWord() void
+        +retreatWord() void
+        +rateWord(quality) void
+        +completeSession() Object
+        +getCurrentWord() Object
+        +getProgress() Object
+    }
+
+    class VocabMasterRenderer {
+        +renderCard(word, revealed) void
+        +renderStats(metrics) void
+        +renderProgress(data) void
+        +renderQueuePanel(data) void
+        +animateCardTransition(dir) Promise
+        +showOverlay(id) void
+        +hideOverlay(id) void
+    }
+
+    class VocabMasterDialog {
+        +askConfirm(message) Promise~boolean~
+        +openSettings() void
+        +closeSettings(save) void
+        +openStats() void
+        +showToast(msg, type) void
+        +showLoading() void
+        +hideLoading() void
+    }
+
+    class VocabMasterEvents {
+        +bindAll() void
+        +unbindAll() void
+        +bindSearch() void
+        +bindKeyboard() void
+        +bindModeSwitching() void
+        +bindCategorySwitching() void
+        +bindCardActions() void
+    }
+
+    class VocabMasterEventRegistry {
+        +register(el, event, handler, scope, opts) void
+        +disposeScope(scope) void
+        +count(scope) number
+        +scopes() Array
+    }
+
+    class VocabMasterMemoryCurve {
+        +renderMemoryCurve(canvas, progress, days) void
+        +aggregateRetention(progress, days) Array
+    }
+
+    class VocabMasterTTS {
+        +speak(text, opts) Promise
+        +setVoice(voice) void
+        +setSpeed(speed) void
+        +getVoice() string
+        +getSpeed() number
+    }
+
+    VocabMasterFlow --> VocabMasterState : reads/writes
+    VocabMasterFlow --> VocabMasterScheduler : builds queues
+    VocabMasterFlow --> VocabMasterLearning : metrics
+    VocabMasterRenderer --> VocabMasterState : reads
+    VocabMasterEvents --> VocabMasterFlow : triggers actions
+    VocabMasterEvents --> VocabMasterRenderer : triggers renders
+    VocabMasterEvents --> VocabMasterDialog : triggers dialogs
+    VocabMasterEvents --> VocabMasterEventRegistry : registers
+    VocabMasterDialog --> VocabMasterEventRegistry : registers

@@ -1,0 +1,28 @@
+sequenceDiagram
+    actor User
+    participant Events as EventHandlers
+    participant Flow as LearningFlow
+    participant Scheduler as SM2Scheduler
+    participant State as StateManager
+    participant Renderer as Renderer
+    participant API as Backend API
+
+    User->>Events: 按 "1" (认识)
+    Events->>Flow: rateWord(3)
+    Flow->>State: get(['currentWord','progress','category'])
+    State-->>Flow: { word, progress, category }
+    Flow->>Scheduler: calculateSM2(3, card, today)
+    Scheduler-->>Flow: newCard
+    Flow->>State: set('progress', updatedProgress)
+    Flow->>State: set('stats', updatedStats)
+    Flow->>API: save_progress(progress)
+    Flow->>API: save_stats(stats)
+    Flow->>Flow: advanceWord()
+    Flow->>State: get('queue','currentIndex')
+    alt 还有单词
+        Flow->>Renderer: renderCard(nextWord, false)
+        Flow->>Renderer: animateCardTransition('forward')
+    else 队列结束
+        Flow->>Renderer: showOverlay('complete')
+        Flow->>Flow: completeSession()
+    end

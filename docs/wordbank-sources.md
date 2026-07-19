@@ -1,37 +1,88 @@
-# Word Bank Sources and License Notes
+# 词库来源与许可审计
 
-This project currently ships small, project-maintained demo word banks for CET-4, CET-6, postgraduate, IELTS, and TOEFL study flows. They are suitable for application testing and workflow demonstration, but they should not be presented as complete exam syllabi.
+本文档记录 VocabMaster 内置词库的来源、许可状态和导入流程。发布前必须检查本文件和 `src/words/metadata.json` 是否一致。
 
-## Current bundled word banks
+## 当前内置词库
 
-| File | Current count | Source status | License status |
-| --- | ---: | --- | --- |
-| `src/words/cet4.json` | 101 | Project-maintained demo entries generated from `build_wordbanks.py` | Covered by the project license unless replaced with external data |
-| `src/words/cet6.json` | 50 | Project-maintained demo entries generated from `build_wordbanks.py` | Covered by the project license unless replaced with external data |
-| `src/words/postgraduate.json` | 50 | Project-maintained demo entries generated from `build_wordbanks.py` | Covered by the project license unless replaced with external data |
-| `src/words/ielts.json` | 50 | Project-maintained demo entries generated from `build_wordbanks.py` | Covered by the project license unless replaced with external data |
-| `src/words/toefl.json` | 50 | Project-maintained demo entries generated from `build_wordbanks.py` | Covered by the project license unless replaced with external data |
+当前内置词库由 ECDICT 的 `ecdict.csv` 按考试标签生成。它们是 “ECDICT 标签词库”，不是教育部、考试院、IELTS 或 ETS 发布的官方考试大纲原件，发布材料不能宣称“官方完整考纲”。
 
-## Candidate external source
+| 文件 | 当前数量 | ECDICT 标签 | 来源状态 | 许可状态 |
+| --- | ---: | --- | --- | --- |
+| `src/words/cet4.json` | 3849 | `cet4` | `scripts/import_ecdict_wordbanks.py` 生成 | ECDICT MIT |
+| `src/words/cet6.json` | 5407 | `cet6` | `scripts/import_ecdict_wordbanks.py` 生成 | ECDICT MIT |
+| `src/words/postgraduate.json` | 4801 | `ky` | `scripts/import_ecdict_wordbanks.py` 生成 | ECDICT MIT |
+| `src/words/ielts.json` | 5040 | `ielts` | `scripts/import_ecdict_wordbanks.py` 生成 | ECDICT MIT |
+| `src/words/toefl.json` | 6974 | `toefl` | `scripts/import_ecdict_wordbanks.py` 生成 | ECDICT MIT |
 
-- ECDICT: <https://github.com/skywind3000/ECDICT>
-  - Public description: Free English to Chinese Dictionary Database.
-  - GitHub reports the repository license as MIT.
-  - Candidate use: enrich meanings, phonetics, tags, and frequency metadata after field mapping and attribution are implemented.
-  - Not currently bundled: no ECDICT data has been imported into the current JSON word banks by this project state.
+## ECDICT 审计记录
 
-## Import rules for future word-bank expansion
+- 来源 URL: <https://github.com/skywind3000/ECDICT>
+- 原始 CSV: <https://raw.githubusercontent.com/skywind3000/ECDICT/master/ecdict.csv>
+- 许可证: MIT
+- 许可证文件: `docs/licenses/ECDICT-LICENSE.txt`
+- 下载日期: 2026-07-07
+- 上游 commit: `bc015ed2e24a7abef49fc6dbbb7fe32c1dadaf8b`
+- `ecdict.csv` blob sha: `c4ade63ea08cf39d9c3475e96929036d64d94c94`
+- 导入脚本: `scripts/import_ecdict_wordbanks.py`
+- 校验命令: `python scripts/validate_wordbanks.py`
+- 校验结果: `Word banks OK`
 
-Before importing any external vocabulary dataset:
+## 字段映射
 
-1. Record the upstream URL, license name, license URL, download date, and exact upstream revision or release.
-2. Keep the upstream license text or a clear reference in `docs/licenses/` when redistribution requires it.
-3. Add a reproducible import script instead of manually editing generated JSON.
-4. Preserve enough metadata to trace each generated word entry back to its source.
-5. Validate schema fields: `word`, `phonetic`, `meaning`, `example`, and `exampleTranslation`.
-6. Deduplicate case-insensitively within each category.
-7. Do not label a generated list as a complete official exam syllabus unless the source is an official syllabus or a verified licensed derivative.
+| VocabMaster 字段 | ECDICT 字段/规则 |
+| --- | --- |
+| `word` | `word`，最长 80 字符 |
+| `phonetic` | `phonetic`，自动补 `/.../`；缺失时写 `N/A` |
+| `meaning` | 优先 `translation`，缺失时用 `definition`，多行用 `；` 合并 |
+| `example` | ECDICT 当前未提供可用例句，写入 `No example available in ECDICT.` |
+| `exampleTranslation` | ECDICT 当前未提供可用例句翻译，写入 `ECDICT 未提供例句。` |
 
-## Current limitation
+## 生成规则
 
-The current exam categories are learning/demo categories, not legally or academically verified official word lists. For serious exam preparation, the next step is to add a documented import pipeline and a vetted source list.
+1. 从 ECDICT CSV 读取所有词条。
+2. 按 `tag` 字段映射到软件内部词库：
+   - `cet4` → `cet4.json`
+   - `cet6` → `cet6.json`
+   - `ky` → `postgraduate.json`
+   - `ielts` → `ielts.json`
+   - `toefl` → `toefl.json`
+3. 每个词库内按小写后的 `word` 去重。
+4. 跳过没有 `word` 或没有释义的词条。
+5. 输出后更新 `src/words/metadata.json`。
+
+## 重新生成命令
+
+```bash
+python scripts/import_ecdict_wordbanks.py --download
+python scripts/validate_wordbanks.py
+```
+
+如果已经下载过 ECDICT CSV，可复用缓存：
+
+```bash
+python scripts/import_ecdict_wordbanks.py --input .cache/ecdict/ecdict.csv
+```
+
+## 不采用的候选来源
+
+- `KyleBing/english-vocabulary`：包含较完整的中文学习词库，但仓库未声明许可证，不能直接内置到本项目。
+- `RealKai42/qwerty-learner` / `zyronon/TypeWords`：包含多类词库，但项目许可证为 GPL-3.0，不适合直接混入当前 MIT 项目发布。
+- `exam-data/NETEMVocabulary`：考研词库来源明确，但数据许可为 CC BY-NC-SA 4.0，会引入非商业和相同方式共享限制，暂不内置。
+
+## 校验要求
+
+每次构建都必须通过：
+
+```bash
+python scripts/validate_wordbanks.py
+```
+
+该脚本至少检查：
+
+- JSON 格式。
+- 必填字段：`word`、`phonetic`、`meaning`、`example`、`exampleTranslation`。
+- 空字段。
+- 重复词。
+- 超长字段。
+- 未在 `metadata.json` 声明的非法类别。
+- `metadata.json` 中的文件名和词条数量是否与实际文件一致。

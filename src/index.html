@@ -9,26 +9,57 @@
 </head>
 <body>
   <div class="app-container">
+    <aside class="side-nav" aria-label="主导航">
+      <div class="side-brand" aria-label="VocabMaster">VM</div>
+      <nav class="side-nav-list">
+        <button class="side-nav-item active" id="nav-today" title="今日学习" aria-label="今日学习">
+          <span class="side-nav-icon" aria-hidden="true">今</span>
+          <span class="side-nav-text">今日学习</span>
+        </button>
+        <button class="side-nav-item" id="nav-wordbooks" title="单词本" aria-label="单词本">
+          <span class="side-nav-icon" aria-hidden="true">词</span>
+          <span class="side-nav-text">单词本</span>
+        </button>
+        <button class="side-nav-item" id="nav-plan" title="复习计划" aria-label="复习计划">
+          <span class="side-nav-icon" aria-hidden="true">计</span>
+          <span class="side-nav-text">复习计划</span>
+        </button>
+        <button class="side-nav-item" id="nav-search" title="搜索" aria-label="搜索">
+          <span class="side-nav-icon" aria-hidden="true">搜</span>
+          <span class="side-nav-text">搜索</span>
+        </button>
+        <button class="side-nav-item" id="nav-stats" title="学习统计" aria-label="学习统计">
+          <span class="side-nav-icon" aria-hidden="true">数</span>
+          <span class="side-nav-text">学习统计</span>
+        </button>
+      </nav>
+      <div class="side-nav-bottom">
+        <span class="sync-status" title="离线本地保存">离线可用</span>
+        <button class="side-nav-item compact" id="nav-settings" title="设置" aria-label="设置">
+          <span class="side-nav-icon" aria-hidden="true">设</span>
+          <span class="side-nav-text">设置</span>
+        </button>
+      </div>
+    </aside>
+
     <!-- Header -->
     <header class="app-header">
       <div class="header-left">
-        <h1 class="app-title">📚 VocabMaster</h1>
-        <span class="app-subtitle">科学记忆，高效学习</span>
+        <h1 class="app-title">今日学习</h1>
+        <span class="app-subtitle">专注记忆 · 本地离线 · SM-2 复习</span>
+        <span class="toolbar-pill" id="toolbar-category">CET-4</span>
       </div>
       <div class="header-right">
-        <button class="btn-icon" id="btn-search-toggle" title="搜索单词" aria-label="搜索单词">🔍</button>
-        <button class="btn-icon" id="btn-stats" title="学习统计" aria-label="学习统计">📊</button>
-        <button class="btn-icon" id="btn-theme" title="切换深色模式" aria-label="切换深色模式">🌙</button>
-        <button class="btn-icon" id="btn-import" title="导入词库" aria-label="导入词库">📥</button>
-        <button class="btn-icon" id="btn-export" title="导出数据" aria-label="导出学习数据">📤</button>
-        <button class="btn-icon" id="btn-restore" title="恢复备份" aria-label="恢复备份">↩</button>
-        <button class="btn-icon" id="btn-settings" title="设置" aria-label="打开设置">⚙️</button>
+        <button class="btn-icon" id="btn-about" title="关于" aria-label="关于 VocabMaster">?</button>
+        <button class="btn-icon" id="btn-wordbooks" title="词库" aria-label="打开词库页">词</button>
+        <button class="btn-icon" id="btn-search-toggle" title="搜索单词（Ctrl+K）" aria-label="搜索单词">搜</button>
+        <button class="btn-icon" id="btn-settings" title="设置" aria-label="打开设置">设</button>
       </div>
     </header>
 
-    <!-- Category & Mode Selector -->
-    <nav class="nav-bar">
-      <div class="category-tabs">
+    <!-- Search -->
+    <nav class="nav-bar" aria-label="学习工具栏">
+      <div class="category-tabs" id="category-tabs">
         <button class="cat-tab active" data-category="cet4">CET-4</button>
         <button class="cat-tab" data-category="cet6">CET-6</button>
         <button class="cat-tab" data-category="postgraduate">考研</button>
@@ -36,20 +67,31 @@
         <button class="cat-tab" data-category="toefl">托福</button>
       </div>
       <div class="search-container" id="search-container">
-        <input type="text" class="search-input" id="word-search" placeholder="搜索单词..." autocomplete="off">
-        <button class="search-clear hidden" id="btn-search-clear">&times;</button>
+        <input type="text" class="search-input" id="word-search" placeholder="搜索单词、释义或词组..." autocomplete="off" aria-label="搜索单词">
+        <button class="search-clear hidden" id="btn-search-clear" aria-label="清空搜索">&times;</button>
         <div class="search-results" id="search-results"></div>
       </div>
-      <div class="mode-tabs">
-        <button class="mode-tab active" data-mode="review">🔄 复习</button>
-        <button class="mode-tab" data-mode="new">🆕 新学</button>
-        <button class="mode-tab" data-mode="weak">🎯 强化</button>
-        <button class="mode-tab" data-mode="test">📝 测试</button>
+      <div class="mode-tabs" id="mode-tabs">
+        <button class="mode-tab active" data-mode="mixed">混合</button>
+        <button class="mode-tab" data-mode="review">复习</button>
+        <button class="mode-tab" data-mode="new">新学</button>
+        <button class="mode-tab" data-mode="weak">强化</button>
+        <button class="mode-tab" data-mode="test">测试</button>
       </div>
     </nav>
 
     <!-- Main Content -->
     <main class="main-content">
+      <aside class="learning-queue-panel" aria-label="学习队列">
+        <div class="panel-title">学习队列</div>
+        <div class="queue-metrics">
+          <div><strong id="queue-current">0</strong><span>当前</span></div>
+          <div><strong id="queue-total">0</strong><span>本轮</span></div>
+          <div><strong id="queue-mode">新学</strong><span>模式</span></div>
+        </div>
+        <div class="queue-note">按 Enter 显示答案，使用 1/2/3 完成记忆判断。</div>
+      </aside>
+
       <!-- Word Card Area -->
       <div class="card-area">
         <div class="card-container" id="card-container">
@@ -60,14 +102,31 @@
                 <span class="word-text" id="word-text">Welcome</span>
                 <span class="word-phonetic" id="word-phonetic">/ˈwelkəm/</span>
               </div>
-              <button class="btn-pronounce" id="btn-pronounce" title="发音">
+              <button class="btn-pronounce" id="btn-pronounce" title="发音" aria-label="朗读当前单词">
                 <svg width="18" height="18" viewBox="0 0 24 24"><path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3A4.5 4.5 0 0 0 14 8.5v7a4.47 4.47 0 0 0 2.5-3.5zM14 3.23v2.06a7.007 7.007 0 0 1 0 13.42v2.06A9.01 9.01 0 0 0 14 3.23z" fill="currentColor"/></svg>
               </button>
               <p class="word-meaning" id="word-meaning">n. 欢迎；迎接 v. 欢迎；迎接</p>
               <p class="word-example" id="word-example">"Welcome to VocabMaster!"</p>
               <p class="word-example-trans" id="word-example-trans">欢迎使用 VocabMaster！</p>
+              <div class="word-insights" id="word-insights" aria-label="单词学习提示"></div>
             </div>
             <button class="btn-favorite" id="btn-favorite" title="收藏单词" aria-label="收藏单词" style="position:absolute;top:12px;right:16px;">☆</button>
+          </div>
+
+          <div class="study-plan-panel" id="study-plan-panel" aria-label="今日学习计划">
+            <div class="plan-metric">
+              <span class="plan-value" id="plan-today">0/0</span>
+              <span class="plan-label">今日目标</span>
+            </div>
+            <div class="plan-metric">
+              <span class="plan-value" id="plan-due">0</span>
+              <span class="plan-label">待复习</span>
+            </div>
+            <div class="plan-metric">
+              <span class="plan-value" id="plan-tomorrow">0</span>
+              <span class="plan-label">明日预计</span>
+            </div>
+            <div class="plan-reason" id="plan-reason">当前单词将按学习模式自动安排。</div>
           </div>
 
           <!-- Word Detail Panel -->
@@ -95,40 +154,65 @@
           <!-- Progress dots -->
           <div class="card-progress" id="card-progress">
             <span class="progress-label">当前进度：<strong id="current-index">0</strong> / <span id="total-count">0</span></span>
-            <span class="progress-hint">评级后点击确认 | ← 返回 | 空格发音 | 1忘记 2记得 3简单</span>
+            <span class="progress-hint">Enter 显示/继续 · Space 发音 · 1 认识 · 2 模糊 · 3 忘记 · Ctrl+K 搜索</span>
           </div>
         </div>
 
         <!-- Test Mode Options -->
         <div class="test-options hidden" id="test-options">
+          <div class="test-type-tabs" id="test-type-tabs" aria-label="测试类型">
+            <button class="test-type-tab active" data-test-type="choice">选择</button>
+            <button class="test-type-tab" data-test-type="spelling">拼写</button>
+            <button class="test-type-tab" data-test-type="listening">听音</button>
+          </div>
           <p class="test-question" id="test-question">请选择正确的释义：</p>
           <div class="test-choices" id="test-choices"></div>
+          <form class="test-input-form hidden" id="test-input-form" autocomplete="off">
+            <input type="text" id="test-answer-input" aria-label="输入答案" spellcheck="false">
+            <button class="btn-action btn-confirm" id="btn-test-submit" type="submit">提交</button>
+          </form>
         </div>
 
         <!-- Action Buttons -->
         <div class="card-actions" id="card-actions">
-          <button class="btn-action btn-forgot" id="btn-forgot">
-            <span class="btn-icon-text">🤔</span> 忘记了
+          <button class="btn-action rating-action btn-remember" id="btn-remember" data-shortcut="1">
+            <span class="rating-label">认识</span>
+            <span class="rating-preview" id="rating-preview-remember">下次 -</span>
           </button>
-          <button class="btn-action btn-remember" id="btn-remember">
-            <span class="btn-icon-text">✅</span> 记得了
+          <button class="btn-action rating-action btn-easy" id="btn-easy" data-shortcut="2">
+            <span class="rating-label">模糊</span>
+            <span class="rating-preview" id="rating-preview-easy">下次 -</span>
           </button>
-          <button class="btn-action btn-easy" id="btn-easy">
-            <span class="btn-icon-text">🌟</span> 太简单
+          <button class="btn-action rating-action btn-forgot" id="btn-forgot" data-shortcut="3">
+            <span class="rating-label">忘记</span>
+            <span class="rating-preview" id="rating-preview-forgot">下次 -</span>
           </button>
         </div>
 
-        <!-- Confirm & Back Buttons (shown after rating) -->
+        <!-- Reveal Button -->
         <div class="confirm-actions hidden" id="confirm-actions">
           <button class="btn-action btn-back" id="btn-back">← 返回上个</button>
-          <button class="btn-action btn-confirm" id="btn-confirm">确认 →</button>
+          <button class="btn-action btn-confirm" id="btn-confirm" data-shortcut="Enter">确定</button>
         </div>
 
         <!-- Test Action -->
         <div class="test-actions hidden" id="test-actions">
-          <button class="btn-action btn-next-test" id="btn-next-test">下一题 ▶</button>
+          <button class="btn-action btn-next-test" id="btn-next-test">下一题</button>
         </div>
       </div>
+
+      <aside class="assistant-panel" aria-label="辅助信息">
+        <div class="panel-title">复习状态</div>
+        <div class="assistant-card">
+          <span>下次复习</span>
+          <strong id="assistant-next-review">待学习</strong>
+        </div>
+        <div class="assistant-card">
+          <span>记忆间隔</span>
+          <strong id="assistant-interval">-</strong>
+        </div>
+        <button class="assistant-link" id="btn-detail-toggle" type="button">查看记忆细节</button>
+      </aside>
 
       </main>
 
@@ -167,71 +251,212 @@
     </footer>
 
     <!-- Completed Overlay -->
-    <div class="overlay hidden" id="complete-overlay">
+    <div class="overlay hidden" id="complete-overlay" role="dialog" aria-modal="true" aria-labelledby="complete-title">
       <div class="overlay-content">
-        <div class="complete-icon">🎉</div>
+        <div class="complete-icon">✓</div>
         <h2 class="complete-title" id="complete-title">太棒了！</h2>
         <p class="complete-message" id="complete-message">你已完成今天的学习任务！</p>
         <div class="complete-stats" id="complete-stats"></div>
-        <button class="btn-primary" id="btn-complete-close">继续学习</button>
+        <div class="complete-actions">
+          <button class="btn-primary hidden" id="btn-complete-review">进入复习</button>
+          <div class="complete-new-options hidden" id="complete-new-options">
+            <input type="number" id="complete-new-count" min="1" max="200" value="10" aria-label="此次新学单词数量">
+            <button class="btn-primary" id="btn-complete-new">开始新学</button>
+          </div>
+          <button class="btn-secondary hidden" id="btn-complete-weak">进入强化</button>
+          <button class="btn-secondary" id="btn-complete-close">稍后继续</button>
+        </div>
       </div>
     </div>
 
-    <!-- Settings Modal -->
-    <div class="overlay hidden" id="settings-overlay">
+    <!-- Settings Center -->
+    <div class="overlay hidden" id="settings-overlay" role="dialog" aria-modal="true" aria-labelledby="settings-title">
       <div class="overlay-content settings-content">
-        <h2 class="settings-title">⚙️ 设置</h2>
-        <div class="settings-form">
-          <div class="setting-row">
-            <label>字体大小</label>
-            <div class="font-size-controls">
-              <button class="btn-sm" id="btn-font-dec">A-</button>
-              <span id="font-size-display">18px</span>
-              <button class="btn-sm" id="btn-font-inc">A+</button>
-            </div>
+        <div class="settings-header">
+          <div>
+            <h2 class="settings-title" id="settings-title">设置中心</h2>
+            <p class="settings-subtitle">集中管理学习、桌面行为、数据安全和应用信息。</p>
           </div>
-          <div class="setting-row">
-            <label>每日目标（单词数）</label>
-            <input type="number" id="setting-daily-goal" min="5" max="200" value="30">
-          </div>
-          <div class="setting-info">
-            <p>📌 遵循遗忘曲线智能调度：复习优先，新词补足目标。</p>
-            <p>每日复习量由 SM-2 算法动态决定，无需手动设置。</p>
+          <button class="btn-secondary" id="btn-settings-about">关于 VocabMaster</button>
+        </div>
+        <div class="settings-shell">
+          <nav class="settings-sidebar" aria-label="设置分类">
+            <button class="settings-nav-item active" type="button" data-settings-target="learning">学习</button>
+            <button class="settings-nav-item" type="button" data-settings-target="desktop">桌面</button>
+            <button class="settings-nav-item" type="button" data-settings-target="data">数据</button>
+            <button class="settings-nav-item" type="button" data-settings-target="safety">安全</button>
+            <button class="settings-nav-item" type="button" data-settings-target="about">关于</button>
+          </nav>
+          <div class="settings-form">
+            <section class="settings-section" data-settings-section="learning">
+              <h3 class="settings-section-title">学习偏好</h3>
+              <div class="setting-row">
+                <label>字体大小</label>
+                <div class="font-size-controls">
+                  <button class="btn-sm" id="btn-font-dec">A-</button>
+                  <span id="font-size-display">18px</span>
+                  <button class="btn-sm" id="btn-font-inc">A+</button>
+                </div>
+              </div>
+              <div class="setting-row">
+                <label for="setting-daily-goal">每日目标（单词数）</label>
+                <input type="number" id="setting-daily-goal" min="5" max="200" value="30">
+              </div>
+              <div class="setting-row">
+                <label for="setting-category">当前词库</label>
+                <select id="setting-category">
+                  <option value="cet4">CET-4</option>
+                  <option value="cet6">CET-6</option>
+                  <option value="postgraduate">考研</option>
+                  <option value="ielts">雅思</option>
+                  <option value="toefl">托福</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <label for="setting-speech-accent">发音口音</label>
+                <select id="setting-speech-accent">
+                  <option value="en-US">美音</option>
+                  <option value="en-GB">英音</option>
+                </select>
+              </div>
+              <div class="setting-row">
+                <label for="setting-speech-rate">发音语速</label>
+                <select id="setting-speech-rate">
+                  <option value="0.75">慢速</option>
+                  <option value="0.85">标准</option>
+                  <option value="1.05">快速</option>
+                </select>
+              </div>
+              <div class="setting-info">
+                <p>遵循遗忘曲线智能调度：复习优先，新词补足目标。</p>
+                <p>每日复习量由 SM-2 算法动态决定，无需手动设置。</p>
+              </div>
+            </section>
+
+            <section class="settings-section" data-settings-section="desktop">
+              <h3 class="settings-section-title">桌面行为</h3>
+              <div class="setting-row">
+                <label>全局热键</label>
+                <div class="hotkey-config">
+                  <span id="hotkey-display">Ctrl+Alt+V</span>
+                  <button class="btn-sm" id="btn-hotkey-edit">修改</button>
+                </div>
+              </div>
+              <div class="setting-row">
+                <label>每日学习提醒</label>
+                <div class="reminder-config">
+                  <input type="time" id="reminder-time" value="20:00" style="width:110px;" aria-label="每日提醒时间">
+                  <button class="btn-sm" id="btn-reminder-toggle">关闭</button>
+                </div>
+              </div>
+              <div class="setting-row">
+                <label for="setting-close-to-tray">关闭主窗口时</label>
+                <label class="checkbox-control">
+                  <input type="checkbox" id="setting-close-to-tray" checked>
+                  最小化到系统托盘
+                </label>
+              </div>
+              <div class="setting-row">
+                <label for="setting-startup-enabled">开机启动</label>
+                <label class="checkbox-control">
+                  <input type="checkbox" id="setting-startup-enabled">
+                  开机后自动启动
+                </label>
+              </div>
+            </section>
+
+            <section class="settings-section" data-settings-section="data">
+              <h3 class="settings-section-title">数据与工具</h3>
+              <div class="settings-tool-grid" aria-label="常用功能">
+                <button class="btn-secondary" id="btn-stats">学习统计</button>
+                <button class="btn-secondary" id="btn-theme">深色模式</button>
+                <button class="btn-secondary" id="btn-import">导入词条</button>
+                <button class="btn-secondary" id="btn-export">导出学习档案</button>
+                <button class="btn-secondary" id="btn-restore">导入学习档案</button>
+                <button class="btn-secondary" id="btn-test-mode">测试</button>
+                <button class="btn-secondary" id="btn-error-book">错题本</button>
+              </div>
+              <div class="import-preview-status" id="import-preview-status">
+                导入词条会先统计新增、重复和无效数量，确认后才写入本地自定义词库。
+              </div>
+            </section>
+
+            <section class="settings-section" data-settings-section="safety">
+              <h3 class="settings-section-title">数据安全</h3>
+              <div class="settings-danger-grid">
+                <button class="btn-secondary" id="btn-backups">管理备份</button>
+                <button class="btn-secondary danger-action" id="btn-reset">重置学习进度</button>
+              </div>
+              <div class="backup-manager hidden" id="backup-manager">
+                <div class="backup-header">
+                  <span>最近安全备份</span>
+                  <button class="btn-sm" id="btn-backups-refresh">刷新</button>
+                </div>
+                <div class="backup-list" id="backup-list"></div>
+              </div>
+            </section>
+
+            <section class="settings-section" data-settings-section="about">
+              <h3 class="settings-section-title">应用信息</h3>
+              <div class="setting-info">
+                <p>VocabMaster 使用本地数据存储，学习记录默认保存在当前 Windows 用户目录。</p>
+                <p>快捷键：Enter 显示/继续，Space 发音，1/2/3 评级，Ctrl+K 搜索。</p>
+              </div>
+              <button class="btn-secondary" id="btn-settings-about-inline">查看完整关于信息</button>
+            </section>
           </div>
         </div>
-        <div class="settings-actions">
+        <div class="settings-actions settings-footer-actions">
           <button class="btn-secondary" id="btn-settings-cancel">取消</button>
           <button class="btn-primary" id="btn-settings-save">保存</button>
         </div>
-        <div class="setting-row" style="justify-content:center; margin-top:16px;">
-          <button class="btn-secondary" id="btn-reset" style="color:var(--danger); border-color:var(--danger);">🔄 重置学习进度</button>
+      </div>
+    </div>
+
+    <!-- Hotkey Editor Modal -->
+    <div class="overlay hidden" id="hotkey-overlay" role="dialog" aria-modal="true" aria-labelledby="hotkey-title">
+      <div class="overlay-content settings-content hotkey-editor">
+        <h2 class="settings-title" id="hotkey-title">设置全局热键</h2>
+        <div class="hotkey-options" aria-label="热键修饰键">
+          <label class="checkbox-control"><input type="checkbox" id="hotkey-ctrl" value="Ctrl"> Ctrl</label>
+          <label class="checkbox-control"><input type="checkbox" id="hotkey-alt" value="Alt"> Alt</label>
+          <label class="checkbox-control"><input type="checkbox" id="hotkey-shift" value="Shift"> Shift</label>
+          <label class="checkbox-control"><input type="checkbox" id="hotkey-win" value="Win"> Win</label>
+        </div>
+        <div class="setting-row hotkey-key-row">
+          <label for="hotkey-key">按键</label>
+          <input type="text" id="hotkey-key" maxlength="1" autocomplete="off" aria-label="热键字母">
+        </div>
+        <div class="settings-actions">
+          <button class="btn-secondary" id="btn-hotkey-cancel">取消</button>
+          <button class="btn-primary" id="btn-hotkey-save">保存</button>
         </div>
       </div>
     </div>
 
     <!-- Add Word Modal -->
-    <div class="overlay hidden" id="add-word-overlay">
+    <div class="overlay hidden" id="add-word-overlay" role="dialog" aria-modal="true" aria-labelledby="add-word-title">
       <div class="overlay-content settings-content">
-        <h2 class="settings-title">➕ 添加单词</h2>
+        <h2 class="settings-title" id="add-word-title">添加单词</h2>
         <div class="settings-form">
           <div class="setting-row">
-            <label>单词</label>
+            <label for="add-word-text">单词</label>
             <input type="text" id="add-word-text" placeholder="输入英文单词">
           </div>
           <div class="setting-row">
-            <label>音标</label>
+            <label for="add-word-phonetic">音标</label>
             <input type="text" id="add-word-phonetic" placeholder="如 /ˈeksəmpəl/">
           </div>
           <div class="setting-row">
-            <label>释义</label>
+            <label for="add-word-meaning">释义</label>
             <input type="text" id="add-word-meaning" placeholder="输入中文释义">
           </div>
           <div class="setting-row">
-            <label>例句</label>
+            <label for="add-word-example">例句</label>
             <input type="text" id="add-word-example" placeholder="输入英文例句">
           </div>
           <div class="setting-row">
-            <label>例句翻译</label>
+            <label for="add-word-example-trans">例句翻译</label>
             <input type="text" id="add-word-example-trans" placeholder="输入例句翻译">
           </div>
         </div>
@@ -243,16 +468,16 @@
     </div>
 
     <!-- About Modal -->
-    <div class="overlay hidden" id="about-overlay">
+    <div class="overlay hidden" id="about-overlay" role="dialog" aria-modal="true" aria-labelledby="about-title">
       <div class="overlay-content settings-content">
-        <h2 class="settings-title">📚 关于 VocabMaster</h2>
+        <h2 class="settings-title" id="about-title">关于 VocabMaster</h2>
         <div class="about-body">
           <p><strong>版本：</strong> <span id="app-version">2.0.0</span></p>
           <p>VocabMaster 是一款基于 SM-2 间隔重复算法的英语单词学习应用，</p>
           <p>专为中国英语学习者设计，帮助科学高效地记忆单词。</p>
           <p><strong>词库：</strong> CET-4 · CET-6 · 考研 · 雅思 · 托福</p>
           <p><strong>技术栈：</strong> Python + pywebview + HTML/CSS/JS</p>
-          <p style="margin-top:6px;font-size:12px;color:var(--text-muted);">快捷键：1/2/3 评级 | → 下一个 | 空格 发音 | R/N/T 切换模式</p>
+          <p style="margin-top:6px;font-size:12px;color:var(--text-muted);">快捷键：1/2/3 评级 | Enter 下一个 | 空格 发音 | R/N/T 切换模式</p>
         </div>
         <div class="settings-actions">
           <button class="btn-primary" id="btn-about-close">关闭</button>
@@ -261,9 +486,9 @@
     </div>
 
     <!-- Stats Modal -->
-    <div class="overlay hidden" id="stats-overlay">
+    <div class="overlay hidden" id="stats-overlay" role="dialog" aria-modal="true" aria-labelledby="stats-title">
       <div class="overlay-content stats-content">
-        <h2 class="settings-title">📊 学习统计</h2>
+        <h2 class="settings-title" id="stats-title">学习统计</h2>
         <div class="stats-grid">
           <div class="stats-card">
             <div class="stats-card-value" id="stats-total-studied">0</div>
@@ -282,18 +507,83 @@
             <div class="stats-card-label">已掌握单词</div>
           </div>
         </div>
+        <div class="stats-section-title">本周学习周报</div>
+        <div class="weekly-report" id="weekly-report"></div>
+        <div class="stats-section-title">本地成就</div>
+        <div class="achievement-list" id="achievement-list"></div>
         <div class="stats-charts">
-          <canvas id="chart-heatmap" width="620" height="140"></canvas>
-          <canvas id="chart-accuracy" width="620" height="180"></canvas>
+          <canvas id="chart-heatmap" width="620" height="140" role="img" aria-label="最近学习热力图"></canvas>
+          <canvas id="chart-accuracy" width="620" height="180" role="img" aria-label="最近十四天正确率趋势"></canvas>
         </div>
+        <div class="stats-section-header">
+          <div class="stats-section-title">我的记忆曲线</div>
+          <div class="memory-range-tabs" aria-label="记忆曲线范围">
+            <button class="memory-range-btn active" data-memory-days="7">7天</button>
+            <button class="memory-range-btn" data-memory-days="14">14天</button>
+            <button class="memory-range-btn" data-memory-days="30">30天</button>
+          </div>
+        </div>
+        <div class="memory-curve-panel">
+          <canvas id="chart-memory-curve" width="620" height="220" role="img" aria-label="个人记忆曲线"></canvas>
+          <div class="memory-curve-note">基于本地 SM-2 复习间隔、难度系数和遗忘次数估算，仅用于观察趋势。</div>
+        </div>
+        <div class="stats-section-title">词库进度</div>
+        <div class="category-progress" id="category-progress"></div>
+        <div class="stats-section-title">复习压力预测</div>
+        <div class="review-pressure-forecast" id="review-pressure-forecast"></div>
+        <div class="stats-section-title">测试历史</div>
+        <div class="test-history-section" id="test-history-section"></div>
         <div class="settings-actions">
           <button class="btn-primary" id="btn-stats-close">关闭</button>
         </div>
       </div>
     </div>
 
+    <!-- Wordbook Overlay -->
+    <div class="overlay hidden" id="wordbook-overlay" role="dialog" aria-modal="true" aria-labelledby="wordbook-title">
+      <div class="overlay-content wordbook-content">
+        <h2 class="settings-title" id="wordbook-title">词库</h2>
+        <div class="wordbook-summary" id="wordbook-summary"></div>
+        <div class="wordbook-grid" id="wordbook-grid"></div>
+        <div class="wordbook-note">词库统计基于本地学习记录计算；切换词库不会删除已有进度。</div>
+        <div class="settings-actions">
+          <button class="btn-primary" id="btn-wordbook-close">关闭</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Error Book Overlay -->
+    <div class="overlay hidden" id="error-book-overlay" role="dialog" aria-modal="true" aria-labelledby="error-book-title">
+      <div class="overlay-content settings-content error-book-content">
+        <h2 class="settings-title" id="error-book-title">错题本</h2>
+        <div class="error-book-list" id="error-book-list"></div>
+        <div class="error-book-footer">
+          <span class="backup-detail" id="error-book-count">共 0 个错词</span>
+          <div style="display:flex;gap:8px;">
+            <button class="btn-secondary" id="btn-error-clear">清空</button>
+            <button class="btn-primary" id="btn-error-review">复习全部错题</button>
+          </div>
+        </div>
+        <div class="settings-actions">
+          <button class="btn-primary" id="btn-error-close">关闭</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Confirm Modal -->
+    <div class="overlay confirm-overlay hidden" id="confirm-overlay" role="dialog" aria-modal="true" aria-labelledby="confirm-title">
+      <div class="overlay-content confirm-content">
+        <h2 class="settings-title" id="confirm-title">确认操作</h2>
+        <p class="confirm-message" id="confirm-message"></p>
+        <div class="settings-actions">
+          <button class="btn-secondary" id="btn-confirm-cancel">取消</button>
+          <button class="btn-primary" id="btn-confirm-ok">确定</button>
+        </div>
+      </div>
+    </div>
+
     <!-- Loading Spinner -->
-    <div class="loading-overlay hidden" id="loading-overlay">
+    <div class="loading-overlay hidden" id="loading-overlay" role="status" aria-live="polite" aria-label="正在加载">
       <div class="spinner"></div>
     </div>
 
@@ -301,13 +591,45 @@
     <canvas id="confetti-canvas"></canvas>
 
     <!-- Toast -->
-    <div class="toast hidden" id="toast"></div>
+    <div class="toast hidden" id="toast" role="status" aria-live="polite"></div>
+  </div>
+
+  <!-- Onboarding Overlay -->
+  <div class="onboarding-overlay hidden" id="onboarding-overlay" role="dialog" aria-modal="true" aria-labelledby="onboarding-title">
+    <div class="onboarding-card">
+      <div class="onboarding-dots">
+        <span class="onboarding-dot active" data-step="0"></span>
+        <span class="onboarding-dot" data-step="1"></span>
+        <span class="onboarding-dot" data-step="2"></span>
+        <span class="onboarding-dot" data-step="3"></span>
+      </div>
+      <p class="onboarding-step" id="onboarding-step-label">步骤 1/4</p>
+      <h2 class="onboarding-title" id="onboarding-title">认识评级按钮</h2>
+      <p class="onboarding-desc" id="onboarding-desc">
+        看到单词后先回忆释义，然后点击对应按钮：<br>
+        <strong>认识</strong> = 完全掌握 · <strong>模糊</strong> = 有点印象 · <strong>忘记</strong> = 没想起来
+      </p>
+      <div class="onboarding-actions">
+        <button class="btn-secondary" id="btn-onboarding-prev">上一步</button>
+        <button class="btn-primary" id="btn-onboarding-next">下一步</button>
+        <button class="btn-secondary hidden" id="btn-onboarding-skip">跳过</button>
+      </div>
+    </div>
   </div>
 
   <script src="core-utils.js"></script>
-  <script src="learning-intelligence.js"></script>
   <script src="sm2-scheduler.js"></script>
+  <script src="learning-intelligence.js"></script>
   <script src="search-utils.js"></script>
+  <script src="stats-renderer.js"></script>
+  <script src="memory-curve.js"></script>
+  <script src="tts.js"></script>
+  <script src="morphology.js"></script>
+  <script src="settings-ui.js"></script>
+  <script src="backup-actions.js"></script>
+  <script src="word-form.js"></script>
+  <script src="error-book.js"></script>
+  <script src="keyboard-shortcuts.js"></script>
   <script src="app.js"></script>
 </body>
 </html>

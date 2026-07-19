@@ -9,6 +9,10 @@ FILES = [
     "generate_icon.py",
     "setup_shortcuts.py",
     "run.pyw",
+    "scripts/import_ecdict_wordbanks.py",
+    "scripts/generate_practical_examples.py",
+    "scripts/validate_wordbanks.py",
+    "scripts/check_version_consistency.py",
 ]
 
 for name in FILES:

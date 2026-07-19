@@ -1,17 +1,18 @@
 """
 VocabMaster Word Bank Builder
 ===============================
-Generates complete word banks for CET-4, CET-6, Postgraduate (考研),
-IELTS, and TOEFL exams.
+Legacy demo word-bank generator for CET-4, CET-6, Postgraduate (考研),
+IELTS, and TOEFL study flows.
 
 Usage:
-    python build_wordbanks.py              # Build all banks (200 words each)
-    python build_wordbanks.py --full       # Build full banks (all available words)
+    python build_wordbanks.py              # Build demo banks (up to 200 words each)
+    python build_wordbanks.py --full       # Build all demo words embedded in this file
     python build_wordbanks.py --bank cet4  # Build a specific bank
     python build_wordbanks.py --size 500   # Set word count per bank
 
-The script includes curated word lists for each exam with proper definitions.
-For full datasets, it can optionally fetch from ECDICT (network required).
+The production built-in banks are generated from ECDICT by
+scripts/import_ecdict_wordbanks.py. This script is retained only for local
+demo generation and fallback development data.
 """
 import json
 import os

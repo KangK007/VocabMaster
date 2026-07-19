@@ -28,5 +28,13 @@
       .replace(/'/g, '&#39;');
   }
 
-  return { escapeHtml, localDateKey };
+  function debounce(fn, delay = 200) {
+    let timer = null;
+    return function debounced(...args) {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn.apply(this, args), delay);
+    };
+  }
+
+  return { escapeHtml, localDateKey, debounce, pad2 };
 });
