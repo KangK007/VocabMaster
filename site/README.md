@@ -28,3 +28,11 @@ https://<github-username>.github.io/<repo-name>/support/
 https://<github-username>.github.io/<repo-name>/privacy/
 https://<github-username>.github.io/<repo-name>/downloads/vocabmaster/2.0.0/
 ```
+
+当前项目使用的公开页面地址：
+
+```text
+https://KangK007.github.io/VocabMaster/support/
+https://KangK007.github.io/VocabMaster/privacy/
+https://KangK007.github.io/VocabMaster/downloads/vocabmaster/2.0.0/
+```
