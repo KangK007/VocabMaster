@@ -4,7 +4,18 @@
 
 #define AppName "VocabMaster"
 #define AppVersion "2.0.0"
+#ifndef AppPublisher
 #define AppPublisher "VocabMaster Contributors"
+#endif
+#ifndef AppPublisherURL
+#define AppPublisherURL ""
+#endif
+#ifndef AppSupportURL
+#define AppSupportURL ""
+#endif
+#ifndef AppUpdatesURL
+#define AppUpdatesURL ""
+#endif
 #define AppExeName "VocabMaster.exe"
 #define AppId "{{A1B2C3D4-E5F6-7890-ABCD-EF1234567890}"
 
@@ -14,6 +25,9 @@ AppName={#AppName}
 AppVersion={#AppVersion}
 AppVerName={#AppName} {#AppVersion}
 AppPublisher={#AppPublisher}
+AppPublisherURL={#AppPublisherURL}
+AppSupportURL={#AppSupportURL}
+AppUpdatesURL={#AppUpdatesURL}
 VersionInfoVersion={#AppVersion}.0
 VersionInfoCompany={#AppPublisher}
 VersionInfoDescription={#AppName} Windows Installer

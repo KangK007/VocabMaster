@@ -1,9 +1,11 @@
 # -*- mode: python ; coding: utf-8 -*-
 
+import os
 from pathlib import Path
 
 
 ROOT = Path.cwd()
+VERSION_INFO_FILE = os.environ.get('VOCABMASTER_VERSION_INFO_FILE', 'assets/version_info.txt')
 
 
 a = Analysis(
@@ -35,7 +37,7 @@ exe = EXE(
     upx=True,
     console=False,
     icon='assets/icon.ico',
-    version='assets/version_info.txt',
+    version=VERSION_INFO_FILE,
 )
 
 coll = COLLECT(

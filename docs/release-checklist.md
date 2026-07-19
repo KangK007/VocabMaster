@@ -30,6 +30,11 @@
 
 ## Windows Package
 
+- [ ] Copy `scripts/release_metadata.example.ps1` to `.release.local.ps1` and replace all placeholders with real publisher information.
+- [ ] `.release.local.ps1` is not committed and certificate files are outside Git.
+- [ ] `VOCABMASTER_PUBLISHER` is the legal publisher name used by the signing certificate or Store publisher identity.
+- [ ] `VOCABMASTER_TIMESTAMP_URL` points to the timestamp service recommended by the certificate authority.
+- [ ] Full release command completed: `npm run release:build`.
 - [ ] Build command completed: `powershell -ExecutionPolicy Bypass -File scripts/build_windows.ps1 -Clean`.
 - [ ] `dist/VocabMaster/VocabMaster.exe` launches.
 - [ ] Packaged smoke passes: `.venv-build\Scripts\python.exe scripts\desktop_smoke.py --app dist\VocabMaster\VocabMaster.exe`.
@@ -41,7 +46,7 @@
 - [ ] Uninstall behavior is documented.
 - [ ] Installer supports `/VERYSILENT /NORESTART` in an offline VM.
 - [ ] Installer and EXE have valid Authenticode signatures from the real publisher.
-- [ ] `VOCABMASTER_SUPPORT_URL`, `VOCABMASTER_PRIVACY_CONTACT` and `VOCABMASTER_DOWNLOAD_URL` point to real public release resources.
+- [ ] `VOCABMASTER_SUPPORT_URL`, `VOCABMASTER_PRIVACY_CONTACT` and `VOCABMASTER_DOWNLOAD_URL` point to real public release resources and pass `npm run release:check`.
 - [ ] Upgrade and uninstall preserve `%APPDATA%\VocabMaster`.
 
 ## Manual Smoke Test

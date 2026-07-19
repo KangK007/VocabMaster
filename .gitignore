@@ -40,6 +40,11 @@ nul
 .workbuddy/
 docs/superpowers/
 
+# Local release credentials and private signing material
+.release.local.ps1
+*.pfx
+*.p12
+
 # Test artifacts
 playwright-report/
 test-results/

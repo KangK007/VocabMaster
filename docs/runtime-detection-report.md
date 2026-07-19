@@ -6,19 +6,19 @@
 
 ## 1. 汇总结论
 
-核心功能自动化测试通过，当前构建适合继续内部试用和发布前验收；公开软件市场发布仍被代码签名、真实发布者资料和工作区未整理状态阻断。
+核心功能自动化测试通过，当前构建适合继续内部试用和发布前验收；公开软件市场发布仍被代码签名和真实发布者资料阻断。
 
 | 项目 | 结果 | 说明 |
 | --- | --- | --- |
 | 静态检查 | 通过 | Python 语法、版本一致性、词库校验、前端 JS 语法均通过 |
-| 单元测试 | 通过 | Python `unittest` 38 项通过，Node 单元测试全部通过 |
+| 单元测试 | 通过 | Python `unittest` 43 项通过，Node 单元测试全部通过 |
 | 浏览器 E2E | 通过 | Playwright 43 项通过 |
 | npm 依赖漏洞 | 通过 | `npm audit --audit-level=moderate` 返回 0 vulnerabilities |
 | 敏感信息扫描 | 通过，低风险误报 | 命中内容为文档示例和词库单词，未发现真实私钥/API key |
 | 发布产物 | 存在 | `dist/VocabMaster/VocabMaster.exe` 和 `dist/installer/VocabMaster-Setup-2.0.0.exe` 均存在 |
 | 发布签名 | 阻断 | EXE 和安装器 Authenticode 状态均为 `NotSigned` |
 | 发布者资料 | 阻断 | 未提供真实支持 URL、隐私联系方式和版本化下载/更新地址 |
-| Git 发布基线 | 阻断 | 当前工作区存在大量修改和未跟踪文件，不能直接作为正式 release/tag |
+| Git 发布基线 | 通过 | 发布就绪优化已整理成本地提交，生成物和本地凭据不纳入 Git |
 | 桌面烟测 | 通过 | 覆盖启动、托盘关闭、热键恢复、二次启动唤醒和退出 |
 | 安装器烟测 | 通过 | 覆盖安装、启动、升级、卸载和用户数据保留 |
 
@@ -27,12 +27,12 @@
 | 命令 | 结果 |
 | --- | --- |
 | `npm run check` | 通过：`Python syntax OK`、`Version declarations OK`、`Word banks OK` |
-| `npm test` | 通过：Python `Ran 38 tests`，`OK`；Node 单元测试无失败 |
+| `npm test` | 通过：Python `Ran 43 tests`，`OK`；Node 单元测试无失败 |
 | `npm run e2e` | 通过：Playwright `43 passed` |
 | `npm audit --audit-level=moderate` | 通过：`found 0 vulnerabilities` |
 | `rg` 敏感信息扫描 | 未发现真实密钥；命中文档示例和词库普通单词 |
 | `Get-AuthenticodeSignature dist/...` | 阻断：EXE 和安装器均为 `NotSigned` |
-| `npm run release:check` | 阻断：未签名、缺真实发布者资料、Git 工作区不干净 |
+| `npm run release:check` | 阻断：未签名、缺真实发布者资料；已提供本地发布配置和签名脚本 |
 | `npm run desktop:smoke` | 通过：`launch, tray close, hotkey restore, second-instance restore, exit` |
 | `npm run installer:smoke` | 通过：`install, launch, upgrade, uninstall, data retained` |
 
@@ -102,12 +102,12 @@
 ## 7. 发布风险评级
 
 Production audit：82/100，属于“可发布但有注意事项”。
-公开软件市场发布结论：当前不建议公开上架，必须先完成签名、真实发布资料和 Git 发布基线整理。
+公开软件市场发布结论：当前不建议公开上架，必须先完成真实签名证书、真实发布资料和最终签名包验收。
 
 ## 8. 建议下一步
 
-1. 准备真实 Authenticode 证书、时间戳服务、支持 URL、隐私联系方式和版本化下载/更新地址。
-2. 运行 `npm run release:check`，直到签名、发布资料和 Git 状态全部通过。
+1. 复制 `scripts/release_metadata.example.ps1` 为 `.release.local.ps1`，填入真实发布者、支持页、隐私联系人、下载页、证书和时间戳服务。
+2. 运行 `npm run release:build`，直到签名、发布资料和安装器检查全部通过。
 3. 关闭当前 VocabMaster 实例后复跑 `npm run desktop:smoke` 和 `npm run installer:smoke`。
 4. 继续对词库例句做抽样人工审校，重点检查长释义和专业词。
 5. 补充 Python 依赖漏洞审计。

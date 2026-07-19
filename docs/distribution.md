@@ -31,3 +31,35 @@ Inno Setup 安装器用于实验室内网、离线机器或项目发布页直接
 - 商业用途需要发布者确认并满足 Inno Setup 的商业许可要求；科研或非商业构建也应保留许可证记录。
 
 这些项需要真实外部身份或环境，不能通过占位值替代。
+
+## 发布资料与签名流程
+
+先复制本地发布配置模板，填入真实信息：
+
+```powershell
+Copy-Item scripts\release_metadata.example.ps1 .release.local.ps1
+notepad .release.local.ps1
+```
+
+`.release.local.ps1` 不应提交到 Git。它需要包含：
+
+- `VOCABMASTER_PUBLISHER`：真实法律发布者名称，应与证书或 Store 发布者身份一致。
+- `VOCABMASTER_SUPPORT_URL`：公开 HTTPS 支持页面。
+- `VOCABMASTER_PRIVACY_CONTACT`：`mailto:` 隐私邮箱或 HTTPS 隐私联系页面。
+- `VOCABMASTER_DOWNLOAD_URL`：版本化下载页、更新页或 Store 页面。
+- `VOCABMASTER_SIGN_CERT_PATH` 或 `VOCABMASTER_SIGN_CERT_THUMBPRINT`：真实代码签名证书。
+- `VOCABMASTER_TIMESTAMP_URL`：证书机构推荐的时间戳服务。
+
+发布构建顺序：
+
+```powershell
+npm run release:build
+```
+
+该命令会清理构建目录、生成 EXE、签名 EXE、生成 Inno Setup 安装器、签名安装器，并运行 `npm run release:check` 等价检查。没有真实证书时，可临时使用：
+
+```powershell
+powershell -ExecutionPolicy Bypass -File scripts\build_release.ps1 -SkipSigning -AllowUnsigned
+```
+
+该模式只适合内部验证，不能作为公开发布包。

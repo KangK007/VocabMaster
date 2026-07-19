@@ -1,10 +1,14 @@
 param(
   [switch]$AllowUnsigned,
-  [switch]$AllowDirty
+  [switch]$AllowDirty,
+  [string]$ReleaseMetadataPath = $env:VOCABMASTER_RELEASE_METADATA_PATH
 )
 
 $ErrorActionPreference = "Stop"
-$Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+. "$PSScriptRoot\release_common.ps1"
+
+$Root = Get-VocabMasterProjectRoot
+$LoadedMetadata = Import-VocabMasterReleaseMetadata $ReleaseMetadataPath
 $Version = (Get-Content -Path (Join-Path $Root "VERSION") -Encoding UTF8 -Raw).Trim()
 $AppExe = Join-Path $Root "dist\VocabMaster\VocabMaster.exe"
 $Installer = Join-Path $Root "dist\installer\VocabMaster-Setup-$Version.exe"
@@ -65,14 +69,18 @@ if (Test-Path $LicenseDir) {
 $SupportUrl = $env:VOCABMASTER_SUPPORT_URL
 $PrivacyContact = $env:VOCABMASTER_PRIVACY_CONTACT
 $DownloadUrl = $env:VOCABMASTER_DOWNLOAD_URL
+$Publisher = $env:VOCABMASTER_PUBLISHER
 
-if (!$SupportUrl -or $SupportUrl -notmatch '^https://') {
+if (Test-VocabMasterPlaceholderValue $Publisher) {
+  Add-Failure "VOCABMASTER_PUBLISHER must be set to the real legal publisher name for public release"
+}
+if (!(Test-VocabMasterHttpsUrl $SupportUrl)) {
   Add-Failure "VOCABMASTER_SUPPORT_URL must be set to a real HTTPS support page for public release"
 }
-if (!$PrivacyContact -or $PrivacyContact -notmatch '^(mailto:|https://)') {
+if (!(Test-VocabMasterPrivacyContact $PrivacyContact)) {
   Add-Failure "VOCABMASTER_PRIVACY_CONTACT must be set to a real mailto: or HTTPS privacy contact"
 }
-if (!$DownloadUrl -or $DownloadUrl -notmatch '^https://') {
+if (!(Test-VocabMasterHttpsUrl $DownloadUrl)) {
   Add-Failure "VOCABMASTER_DOWNLOAD_URL must be set to a real HTTPS versioned download or update page"
 }
 
@@ -95,6 +103,9 @@ if (Get-Command git -ErrorAction SilentlyContinue) {
 Write-Host "Release artifact check for VocabMaster $Version"
 Write-Host "App:       $AppExe"
 Write-Host "Installer: $Installer"
+if ($LoadedMetadata) {
+  Write-Host "Metadata:  $LoadedMetadata"
+}
 
 if ($Warnings.Count -gt 0) {
   Write-Host ""

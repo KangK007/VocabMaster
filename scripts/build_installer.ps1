@@ -1,9 +1,13 @@
 param(
-  [string]$IsccPath = $env:ISCC_PATH
+  [string]$IsccPath = $env:ISCC_PATH,
+  [string]$MetadataPath = $env:VOCABMASTER_RELEASE_METADATA_PATH
 )
 
 $ErrorActionPreference = "Stop"
-$Root = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
+. "$PSScriptRoot\release_common.ps1"
+
+$Root = Get-VocabMasterProjectRoot
+$LoadedMetadata = Import-VocabMasterReleaseMetadata $MetadataPath
 $AppExe = Join-Path $Root "dist\VocabMaster\VocabMaster.exe"
 
 if (!(Test-Path $AppExe)) {
@@ -25,7 +29,27 @@ if (!$IsccPath -or !(Test-Path $IsccPath)) {
 
 Push-Location $Root
 try {
-  & $IsccPath "installer.iss"
+  $IsccArgs = @("installer.iss")
+
+  function Add-InnoDefine($Name, $Value) {
+    if ([string]::IsNullOrWhiteSpace($Value)) {
+      return
+    }
+    if ($Value.Contains('"')) {
+      throw "$Name cannot contain double quote characters."
+    }
+    $script:IsccArgs += "/D$Name=`"$Value`""
+  }
+
+  Add-InnoDefine "AppPublisher" $env:VOCABMASTER_PUBLISHER
+  Add-InnoDefine "AppPublisherURL" $env:VOCABMASTER_DOWNLOAD_URL
+  Add-InnoDefine "AppSupportURL" $env:VOCABMASTER_SUPPORT_URL
+  Add-InnoDefine "AppUpdatesURL" $env:VOCABMASTER_DOWNLOAD_URL
+
+  if ($LoadedMetadata) {
+    Write-Host "Metadata: $LoadedMetadata"
+  }
+  & $IsccPath @IsccArgs
   if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
 } finally {
   Pop-Location

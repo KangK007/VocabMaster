@@ -13,6 +13,8 @@
     "desktop:smoke": "python scripts/run_with_project_python.py scripts/desktop_smoke.py",
     "installer:smoke": "python scripts/run_with_project_python.py scripts/installer_smoke.py",
     "release:check": "powershell -ExecutionPolicy Bypass -File scripts/check_release_artifacts.ps1",
+    "release:sign": "powershell -ExecutionPolicy Bypass -File scripts/sign_release_artifacts.ps1",
+    "release:build": "powershell -ExecutionPolicy Bypass -File scripts/build_release.ps1",
     "clean:generated": "powershell -ExecutionPolicy Bypass -File scripts/clean_generated_artifacts.ps1"
   },
   "keywords": [
