@@ -63,3 +63,31 @@ powershell -ExecutionPolicy Bypass -File scripts\build_release.ps1 -SkipSigning 
 ```
 
 该模式只适合内部验证，不能作为公开发布包。
+
+## 公开链接搭建
+
+仓库内的 `site/` 目录已经提供静态公开页面：
+
+- `site/support/`：支持页面，对应 `VOCABMASTER_SUPPORT_URL`。
+- `site/privacy/`：隐私说明页面，可作为 `VOCABMASTER_PRIVACY_CONTACT` 的 HTTPS 页面。
+- `site/downloads/vocabmaster/2.0.0/`：版本化下载页，对应 `VOCABMASTER_DOWNLOAD_URL`。
+
+若使用 GitHub Pages，`.github/workflows/pages.yml` 会将 `site/` 作为 Pages artifact 发布。页面上线后的默认地址通常类似：
+
+```text
+https://<github-username>.github.io/<repo-name>/support/
+https://<github-username>.github.io/<repo-name>/privacy/
+https://<github-username>.github.io/<repo-name>/downloads/vocabmaster/2.0.0/
+```
+
+公开发布前必须替换 `site/` 页面中的个人发布者名称、支持邮箱、隐私邮箱、签名后安装器下载地址和 SHA256 校验值。可先运行普通检查：
+
+```powershell
+npm run site:check
+```
+
+正式公开前运行严格检查，确认占位信息已经清空：
+
+```powershell
+npm run site:check:release
+```

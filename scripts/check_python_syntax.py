@@ -12,6 +12,7 @@ FILES = [
     "scripts/import_ecdict_wordbanks.py",
     "scripts/generate_practical_examples.py",
     "scripts/validate_wordbanks.py",
+    "scripts/validate_public_site.py",
     "scripts/check_version_consistency.py",
 ]
 

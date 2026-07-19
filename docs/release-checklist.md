@@ -67,6 +67,9 @@
 - [ ] Release notes are written.
 - [ ] Known limitations are listed.
 - [ ] Source commit/tag is recorded.
+- [ ] `site/` public pages have real publisher, support, privacy, download and checksum information.
+- [ ] `npm run site:check` passes before deployment.
+- [ ] `npm run site:check:release` passes before public listing.
 - [ ] Real publisher identity, support URL and privacy contact are present.
 - [ ] Versioned download/update URL is live, or the package is submitted through Microsoft Store.
 - [ ] Store screenshots were captured from the signed release build.
